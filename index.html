@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Mathis Sauvage</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="#home">Portfolio</a>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="#home" class="nav-link">Accueil</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#about" class="nav-link">À propos</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#skills" class="nav-link">Compétences</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#timeline" class="nav-link">Parcours</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#projects" class="nav-link">Projets</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#contact" class="nav-link">Contact</a>
+                </li>
+            </ul>
+            <div class="nav-toggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    Salut, je suis <span class="highlight">Mathis Sauvage</span>
+                </h1>
+                <h2 class="hero-subtitle">Développeur Full Stack</h2>
+                <p class="hero-description">
+                    Je crée des applications web modernes et performantes avec passion et expertise.
+                    Spécialisé en JavaScript, React, Node.js et plus encore.
+                </p>
+                <div class="hero-buttons">
+                    <a href="#projects" class="btn btn-primary">Voir mes projets</a>
+                    <a href="#contact" class="btn btn-secondary">Me contacter</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="hero-avatar">
+                    <i class="fas fa-user-tie"></i>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <a href="#about">
+                <i class="fas fa-chevron-down"></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">À propos de moi</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>
+                        Développeur Full Stack passionné depuis plusieurs années, j'ai acquis une solide expérience dans la création 
+                        d'applications web modernes. Je maîtrise l'ensemble de la chaîne de développement, 
+                        du front-end au back-end, en passant par les bases de données et le déploiement.
+                    </p>
+                    <p>
+                        Mon approche se concentre sur l'écriture de code propre, maintenable et performant. 
+                        J'aime résoudre des problèmes complexes et créer des expériences utilisateur exceptionnelles.
+                    </p>
+                    <div class="about-stats">
+                        <div class="stat">
+                            <h3>10+</h3>
+                            <p>Projets complétés</p>
+                        </div>
+                        <div class="stat">
+                            <h3>1+</h3>
+                            <p>Années d'expérience</p>
+                        </div>
+                        <div class="stat">
+                            <h3>100%</h3>
+                            <p>Satisfaction client</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <div class="about-avatar">
+                        <i class="fas fa-code"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills">
+        <div class="container">
+            <h2 class="section-title">Mes Compétences</h2>
+            <div class="skills-container">
+                <div class="skills-category">
+                    <h3>Frontend</h3>
+                    <div class="skills-list">
+                        <div class="skill-item">
+                            <i class="fab fa-html5" style="color: #E34F26;"></i>
+                            <span>HTML5</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fab fa-css3-alt" style="color: #1572B6;"></i>
+                            <span>CSS3</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fab fa-js-square" style="color: #F7DF1E;"></i>
+                            <span>JavaScript</span>
+                        </div>
+                        
+                        <div class="skill-item">
+                            <i class="fab fa-js-square" style="color: #007ACC;"></i>
+                            <span>TypeScript</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fab fa-react" style="color: #61DAFB;"></i>
+                            <span>React</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-bolt" style="color: #000;"></i>
+                            <span>Next.js</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="skills-category">
+                    <h3>Backend</h3>
+                    <div class="skills-list">
+                        <div class="skill-item">
+                            <i class="fab fa-node-js" style="color: #339933;"></i>
+                            <span>Node.js</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-server" style="color: #000000;"></i>
+                            <span>Express.js</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fab fa-python" style="color: #3776AB;"></i>
+                            <span>Python</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-leaf" style="color: #47A248;"></i>
+                            <span>Prisma</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-database" style="color: #336791;"></i>
+                            <span>PostgreSQL</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="skills-category">
+                    <h3>Outils & DevOps</h3>
+                    <div class="skills-list">
+                        <div class="skill-item">
+                            <i class="fab fa-git-alt" style="color: #F05032;"></i>
+                            <span>Git</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fab fa-linux" style="color: #FCC624;"></i>
+                            <span>Linux</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Timeline Section -->
+    <section id="timeline" class="timeline">
+        <div class="container">
+            <h2 class="section-title">Mon Parcours</h2>
+            <div class="timeline-container">
+                <div class="timeline-item">
+                    <div class="timeline-marker">
+                        <div class="timeline-icon">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">2022 - 2024</div>
+                        <h3>Baccalauréat STI2D (SIN)</h3>
+                        <h4>Sciences et Technologies de l'Industrie et du Développement Durable</h4>
+                        <p>Spécialité Systèmes d'Information et Numérique</p>
+                        <div class="timeline-details">
+                            <p>Formation axée sur l'informatique et le numérique avec apprentissage de la programmation, des réseaux et des systèmes embarqués.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-marker">
+                        <div class="timeline-icon current">
+                            <i class="fas fa-laptop-code"></i>
+                        </div>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">2024 - Maintenant</div>
+                        <h3>BUT Informatique</h3>
+                        <h4>Formation supérieure en développement</h4>
+                        <p>Spécialisation en développement web et applications</p>
+                        <div class="timeline-details">
+                            <p>Approfondissement des compétences en développement full-stack, bases de données, et gestion de projets informatiques.</p>
+                            <div class="current-badge">
+                                <i class="fas fa-clock"></i>
+                                En cours
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item future">
+                    <div class="timeline-marker">
+                        <div class="timeline-icon future">
+                            <i class="fas fa-rocket"></i>
+                        </div>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">2026+</div>
+                        <h3>Objectifs futurs</h3>
+                        <h4>Développeur Full-Stack confirmé</h4>
+                        <p>Spécialisation avancée et projets ambitieux</p>
+                        <div class="timeline-details">
+                            <p>Poursuite d'études ou entrée dans la vie professionnelle en tant que développeur full-stack avec expertise en technologies modernes.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <h2 class="section-title">Mes Projets</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-image">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3>Gestionnaire de Mot de Passe</h3>
+                        <p>Application sécurisée de gestion de mots de passe avec chiffrement et interface moderne.</p>
+                        <div class="project-tech">
+                            <span>JavaScript</span>
+                            <span>HTML5</span>
+                            <span>CSS3</span>
+                            <span>Cryptage</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://pwd.smashballoon.fr" target="_blank" class="project-link">
+                                <i class="fas fa-external-link-alt"></i> Demo
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image">
+                        <i class="fas fa-puzzle-piece"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3>Extension Navigateur - Companion PWD</h3>
+                        <p>Extension Chrome/Firefox qui complète le gestionnaire de mot de passe pour une intégration native dans le navigateur.</p>
+                        <div class="project-tech">
+                            <span>JavaScript</span>
+                            <span>WebExtensions API</span>
+                            <span>Chrome API</span>
+                            <span>Firefox API</span>
+                        </div>
+                        <div class="project-links">
+                            <span class="project-status">
+                                <i class="fas fa-cog"></i> En développement
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3>App Mobile - PWD Companion</h3>
+                        <p>Application mobile native pour gérer vos mots de passe en déplacement, synchronisée avec le gestionnaire web.</p>
+                        <div class="project-tech">
+                            <span>React Native</span>
+                            <span>JavaScript</span>
+                            <span>Cryptage AES</span>
+                            <span>Synchronisation</span>
+                        </div>
+                        <div class="project-links">
+                            <span class="project-status">
+                                <i class="fas fa-cog"></i> En développement
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Contactez-moi</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Discutons de votre projet</h3>
+                    <p>
+                        Je suis toujours intéressé par de nouveaux défis et opportunités. 
+                        N'hésitez pas à me contacter pour discuter de vos projets.
+                    </p>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>mathis.sauvage24750@gmail.com</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <span>+33 6 52 96 83 74 </span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Perigueux, France</span>
+                        </div>
+                    </div>
+                    <div class="social-links">
+                        <a href="#" class="social-link">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+                <form class="contact-form">
+                    <div class="form-group">
+                        <label for="name">Nom</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">Sujet</label>
+                        <input type="text" id="subject" name="subject" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Envoyer le message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2025 Mathis Sauvage. Tous droits réservés.</p>
+                <p>Made with ❤️</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
