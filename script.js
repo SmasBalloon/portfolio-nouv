@@ -105,11 +105,9 @@ if (aboutSection) {
 // Formulaire de contact
 const contactForm = document.querySelector('.contact-form');
 if (contactForm) {
-    console.log('Formulaire de contact trouvé et configuré');
     
     contactForm.addEventListener('submit', function(e) {
         e.preventDefault();
-        console.log('Formulaire soumis');
         
         // Vérification des champs requis
         const requiredFields = this.querySelectorAll('[required]');
@@ -123,7 +121,6 @@ if (contactForm) {
         });
         
         if (!isValid) {
-            console.log('Formulaire invalide');
             return;
         }
         
@@ -156,7 +153,6 @@ if (contactForm) {
                     submitBtn.disabled = false;
                     submitBtn.style.background = '';
                     this.reset();
-                    console.log('Formulaire réinitialisé');
                 }, 3000);
             })
             .catch((error) => {
@@ -509,7 +505,6 @@ if ('performance' in window) {
     window.addEventListener('load', () => {
         setTimeout(() => {
             const perfData = performance.getEntriesByType('navigation')[0];
-            console.log('Temps de chargement:', perfData.loadEventEnd - perfData.fetchStart, 'ms');
         }, 0);
     });
 }
