@@ -13,7 +13,7 @@ html {
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
-    color: #333;
+    color: #000000;
     background-color: #f8fafc;
 }
 
@@ -29,7 +29,7 @@ body {
     --primary-dark: #2563eb;
     --secondary-color: #64748b;
     --accent-color: #10b981;
-    --text-primary: #1e293b;
+    --text-primary: #000000;
     --text-secondary: #64748b;
     --background-light: #f8fafc;
     --background-white: #ffffff;
@@ -446,8 +446,18 @@ section {
     transition: color 0.3s ease;
 }
 
+.skill-item img {
+    width: 24px;
+    height: 24px;
+    transition: all 0.3s ease;
+}
+
 .skill-item:hover i {
     color: white;
+}
+
+.skill-item:hover img {
+    filter: brightness(0) invert(1);
 }
 
 .skill-item span {
