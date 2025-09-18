@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - Page introuvable | Portfolio - Mathis Sauvage</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        .error-container {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--background-light);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .error-content {
+            text-align: center;
+            max-width: 600px;
+            padding: 2rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .error-code {
+            font-size: 8rem;
+            font-weight: bold;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1;
+            margin-bottom: 1rem;
+            animation: bounce 2s ease-in-out infinite;
+        }
+
+        .error-title {
+            font-size: 2.5rem;
+            color: var(--text-primary);
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .error-description {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+
+        .error-actions {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .btn-primary {
+            background: var(--gradient-primary);
+            color: white;
+            box-shadow: var(--shadow-md);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .btn-secondary {
+            background: var(--background-white);
+            color: var(--text-primary);
+            border: 2px solid var(--border-color);
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--primary-color);
+            color: var(--primary-color);
+            transform: translateY(-2px);
+        }
+
+        .error-icon {
+            position: absolute;
+            font-size: 12rem;
+            color: var(--primary-color);
+            opacity: 0.1;
+            z-index: 1;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .error-icon.top-left {
+            top: 10%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+
+        .error-icon.top-right {
+            top: 15%;
+            right: 10%;
+            animation-delay: 1s;
+        }
+
+        .error-icon.bottom-left {
+            bottom: 20%;
+            left: 15%;
+            animation-delay: 2s;
+        }
+
+        .error-icon.bottom-right {
+            bottom: 10%;
+            right: 15%;
+            animation-delay: 1.5s;
+        }
+
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+
+        .breadcrumb {
+            position: absolute;
+            top: 2rem;
+            left: 2rem;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        .breadcrumb a {
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .error-code {
+                font-size: 6rem;
+            }
+
+            .error-title {
+                font-size: 2rem;
+            }
+
+            .error-description {
+                font-size: 1rem;
+            }
+
+            .error-actions {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .error-icon {
+                font-size: 8rem;
+            }
+
+            .breadcrumb {
+                position: relative;
+                top: auto;
+                left: auto;
+                margin-bottom: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="error-container">
+        <div class="breadcrumb">
+            <a href="index.html">
+                <i class="fas fa-home"></i> Accueil
+            </a>
+            <span> / 404</span>
+        </div>
+
+        <!-- Icônes flottantes en arrière-plan -->
+        <i class="fas fa-code error-icon top-left"></i>
+        <i class="fas fa-bug error-icon top-right"></i>
+        <i class="fas fa-search error-icon bottom-left"></i>
+        <i class="fas fa-exclamation-triangle error-icon bottom-right"></i>
+
+        <div class="error-content">
+            <div class="error-code">404</div>
+            <h1 class="error-title">Page introuvable</h1>
+            <p class="error-description">
+                Oups ! Il semblerait que la page que vous recherchez n'existe pas ou a été déplacée.
+                Pas de panique, vous pouvez retourner à l'accueil ou explorer mes projets.
+            </p>
+            <div class="error-actions">
+                <a href="index.html" class="btn btn-primary">
+                    <i class="fas fa-home"></i>
+                    Retour à l'accueil
+                </a>
+                <a href="index.html#projects" class="btn btn-secondary">
+                    <i class="fas fa-folder-open"></i>
+                    Voir mes projets
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Effet de particules au clic
+        document.addEventListener('click', function(e) {
+            createParticle(e.clientX, e.clientY);
+        });
+
+        function createParticle(x, y) {
+            const particle = document.createElement('div');
+            particle.style.position = 'fixed';
+            particle.style.left = x + 'px';
+            particle.style.top = y + 'px';
+            particle.style.width = '8px';
+            particle.style.height = '8px';
+            particle.style.background = 'var(--primary-color)';
+            particle.style.borderRadius = '50%';
+            particle.style.pointerEvents = 'none';
+            particle.style.zIndex = '9999';
+            particle.style.animation = 'particleFloat 1s ease-out forwards';
+
+            document.body.appendChild(particle);
+
+            setTimeout(() => {
+                particle.remove();
+            }, 1000);
+        }
+
+        // Ajout du style pour l'animation des particules
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes particleFloat {
+                0% {
+                    transform: scale(1) translateY(0);
+                    opacity: 1;
+                }
+                100% {
+                    transform: scale(0) translateY(-50px);
+                    opacity: 0;
+                }
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+</body>
+</html>
