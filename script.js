@@ -16,6 +16,35 @@ navLinks.forEach(link => {
     });
 });
 
+// Dark Mode Toggle
+const darkModeToggle = document.getElementById('darkModeToggle');
+const body = document.body;
+const darkModeIcon = darkModeToggle.querySelector('i');
+
+// Check for saved theme preference or default to light mode
+const currentTheme = localStorage.getItem('theme') || 'light';
+if (currentTheme === 'dark') {
+    body.classList.add('dark-mode');
+    darkModeIcon.classList.remove('fa-moon');
+    darkModeIcon.classList.add('fa-sun');
+}
+
+// Toggle dark mode
+darkModeToggle.addEventListener('click', () => {
+    body.classList.toggle('dark-mode');
+    
+    // Switch icon
+    if (body.classList.contains('dark-mode')) {
+        darkModeIcon.classList.remove('fa-moon');
+        darkModeIcon.classList.add('fa-sun');
+        localStorage.setItem('theme', 'dark');
+    } else {
+        darkModeIcon.classList.remove('fa-sun');
+        darkModeIcon.classList.add('fa-moon');
+        localStorage.setItem('theme', 'light');
+    }
+});
+
 // Navigation scrollée
 const navbar = document.querySelector('.navbar');
 
@@ -61,10 +90,54 @@ document.addEventListener('DOMContentLoaded', () => {
     // Ajouter une classe pour indiquer que JavaScript est chargé
     document.body.classList.add('js-loaded');
     
-    const animateElements = document.querySelectorAll('.skills-category, .timeline-item, .project-card, .contact-content');
+    const animateElements = document.querySelectorAll('.skills-category, .timeline-item, .project-card, .contact-content, .competence-card');
     animateElements.forEach(el => {
         el.classList.add('animate-on-scroll');
         observer.observe(el);
+    });
+    
+    // Animation des barres de niveau BUT Compétences
+    const competenceObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const levelBars = entry.target.querySelectorAll('.level-fill');
+                levelBars.forEach(bar => {
+                    // Trigger the CSS animation by ensuring the width is applied
+                    setTimeout(() => {
+                        bar.style.opacity = '1';
+                    }, 100);
+                });
+                competenceObserver.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.3 });
+    
+    const butSection = document.querySelector('#but-competences');
+    if (butSection) {
+        competenceObserver.observe(butSection);
+    }
+    
+    // Toggle pour les Apprentissages Critiques (AC)
+    const acToggles = document.querySelectorAll('.ac-toggle');
+    acToggles.forEach(toggle => {
+        toggle.addEventListener('click', function() {
+            const card = this.closest('.competence-card');
+            const acList = card.querySelector('.ac-list');
+            
+            // Toggle active class
+            this.classList.toggle('active');
+            acList.classList.toggle('active');
+            
+            // Animer les mini barres de niveau quand la liste s'ouvre
+            if (acList.classList.contains('active')) {
+                setTimeout(() => {
+                    const miniBars = acList.querySelectorAll('.mini-level-fill');
+                    miniBars.forEach(bar => {
+                        bar.style.opacity = '1';
+                    });
+                }, 200);
+            }
+        });
     });
 });
 

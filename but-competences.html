@@ -1,0 +1,909 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Compétences BUT Informatique - Mathis Sauvage</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+  <style>
+    .page-header {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      min-height: 40vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .page-header::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url('data:image/svg+xml,<svg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><g fill="%23ffffff" fill-opacity="0.05"><circle cx="30" cy="30" r="4"/></g></svg>') repeat;
+      animation: float 20s infinite linear;
+    }
+
+    .page-header-content {
+      position: relative;
+      z-index: 1;
+      max-width: 800px;
+      padding: 2rem;
+    }
+
+    .page-header h1 {
+      font-size: 3rem;
+      font-weight: 800;
+      margin-bottom: 1rem;
+    }
+
+    .page-header p {
+      font-size: 1.2rem;
+      opacity: 0.9;
+    }
+
+    .back-link {
+      position: absolute;
+      top: 2rem;
+      left: 2rem;
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      z-index: 2;
+      transition: transform 0.3s ease;
+    }
+
+    .back-link:hover {
+      transform: translateX(-5px);
+    }
+
+    .competences-section {
+      padding: 5rem 0;
+      background: #f8fafc;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="page-header">
+    <a href="index.html" class="back-link">
+      <i class="fas fa-arrow-left"></i>
+      Retour au portfolio
+    </a>
+    <div class="page-header-content">
+      <h1>Compétences BUT Informatique</h1>
+      <p>Bachelor Universitaire de Technologie - Référentiel National</p>
+      <p style="font-size: 0.95rem; margin-top: 1rem; opacity: 0.8;">
+        Découvrez en détail les 6 compétences et leurs apprentissages critiques
+      </p>
+    </div>
+  </div>
+
+  <section class="competences-section">
+    <div class="container">
+      <div class="competences-grid">
+        <!-- C1: Réaliser -->
+        <div class="competence-card expandable">
+          <div class="competence-header">
+            <div class="competence-icon" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+              <i class="fas fa-code"></i>
+            </div>
+            <div class="competence-title-wrapper">
+              <h3>Réaliser</h3>
+              <p>Développer un développement d'application</p>
+            </div>
+          </div>
+          <div class="competence-level">
+            <div class="level-indicator">
+              <div class="level-bar level-4" data-level="3">
+                <span class="level-fill"></span>
+              </div>
+              <div class="level-text">Niveau 4/4</div>
+            </div>
+          </div>
+
+          <button class="ac-toggle">
+            <i class="fas fa-chevron-down"></i>
+            Voir les Apprentissages Critiques
+          </button>
+
+          <div class="ac-list">
+            <div class="ac-item">
+              <div class="ac-header">
+                <span class="ac-code">AC11.01</span>
+                <span class="ac-name">Implémenter des conceptions simples</span>
+              </div>
+              <div class="ac-level">
+                <div class="mini-level-bar level-3">
+                  <span class="mini-level-fill"></span>
+                </div>
+                <span class="mini-level-text">3/4</span>
+              </div>
+            </div>
+
+            <div class="ac-item">
+              <div class="ac-header">
+                <span class="ac-code">AC11.02</span>
+                <span class="ac-name">Élaborer des conceptions simples</span>
+              </div>
+              <div class="ac-level">
+                <div class="mini-level-bar level-3">
+                  <span class="mini-level-fill"></span>
+                </div>
+                <span class="mini-level-text">3/4</span>
+              </div>
+            </div>
+
+            <div class="ac-item">
+              <div class="ac-header">
+                <span class="ac-code">AC11.03</span>
+                <span class="ac-name">Faire des essais et évaluer leurs résultats</span>
+              </div>
+              <div class="ac-level">
+                <div class="mini-level-bar level-2">
+                  <span class="mini-level-fill"></span>
+                </div>
+                <span class="mini-level-text">2/4</span>
+              </div>
+            </div>
+
+            <div class="ac-item">
+              <div class="ac-header">
+                <span class="ac-code">AC11.04</span>
+                <span class="ac-name">Développer des interfaces utilisateurs</span>
+              </div>
+              <div class="ac-level">
+                <div class="mini-level-bar level-3">
+                  <span class="mini-level-fill"></span>
+                </div>
+                <span class="mini-level-text">3/4</span>
+              </div>
+            </div>
+
+            <div class="ac-item">
+              <div class="ac-header">
+                <span class="ac-code">AC21.01</span>
+                <span class="ac-name">Élaborer et implémenter les spécifications fonctionnelles et non fonctionnelles à
+                  partir des exigences</span>
+              </div>
+              <div class="ac-level">
+                <div class="mini-level-bar level-3">
+                  <span class="mini-level-fill"></span>
+                </div>
+                <span class="mini-level-text">3/4</span>
+              </div>
+            </div>
+
+            <div class="ac-item">
+              <div class="ac-header">
+                <span class="ac-code">AC21.02</span>
+                <span class="ac-name">Appliquer des principes d’accessibilité et d’ergonomie</span>
+              </div>
+              <div class="ac-level">
+                <div class="mini-level-bar level-3">
+                  <span class="mini-level-fill"></span>
+                </div>
+                <span class="mini-level-text">3/4</span>
+              </div>
+            </div>
+
+            <div class="ac-item">
+              <div class="ac-header">
+                <span class="ac-code">AC21.03</span>
+                <span class="ac-name">Adopter de bonnes pratiques de conception et de programmation</span>
+              </div>
+              <div class="ac-level">
+                <div class="mini-level-bar level-3">
+                  <span class="mini-level-fill"></span>
+                </div>
+                <span class="mini-level-text">3/4</span>
+              </div>
+            </div>
+
+            <div class="ac-item">
+              <div class="ac-header">
+                <span class="ac-code">AC21.04</span>
+                <span class="ac-name">Vérifier et valider la qualité de l’application par les tests</span>
+              </div>
+              <div class="ac-level">
+                <div class="mini-level-bar level-3">
+                  <span class="mini-level-fill"></span>
+                </div>
+                <span class="mini-level-text">3/4</span>
+              </div>
+            </div>
+
+
+          </div>
+        </div>
+
+        <!-- C2: Optimiser -->
+        <div class="competence-card expandable">
+          <div class="competence-header">
+            <div class="competence-icon" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">
+              <i class="fas fa-rocket"></i>
+            </div>
+            <div class="competence-title-wrapper">
+              <h3>Optimiser</h3>
+              <p>Appréhender et construire des algorithmes</p>
+            </div>
+          </div>
+          <div class="competence-level">
+            <div class="level-indicator">
+              <div class="level-bar level-2" data-level="2">
+                <span class="level-fill"></span>
+              </div>
+              <div class="level-text">Niveau 2/4</div>
+            </div>
+          </div>
+
+          <button class="ac-toggle">
+            <i class="fas fa-chevron-down"></i>
+            Voir les Apprentissages Critiques
+          </button>
+
+          <div class="ac-list">
+            <div class="ac-item">
+              <div class="ac-header">
+                <span class="ac-code">AC12.01</span>
+                <span class="ac-name">Analyser un problème avec méthode (découpage en éléments algorithmiques simples,
+                  structure de données...)</span>
+              </div>
+              <div class="ac-level">
+                <div class="mini-level-bar level-2">
+                  <span class="mini-level-fill"></span>
+                </div>
+                <span class="mini-level-text">2/4</span>
+              </div>
+            </div>
+
+            <div class="ac-item">
+              <div class="ac-header">
+                <span class="ac-code">AC12.02</span>
+                <span class="ac-name">Comparer des algorithmes pour des problèmes classiques (tris simples,
+                  recherche...)</span>
+              </div>
+              <div class="ac-level">
+                <div class="mini-level-bar level-2">
+                  <span class="mini-level-fill"></span>
+                </div>
+                <span class="mini-level-text">2/4</span>
+              </div>
+            </div>
+
+            <div class="ac-item">
+              <div class="ac-header">
+                <span class="ac-code">AC12.03</span>
+                <span class="ac-name">Formaliser et mettre en œuvre des outils mathématiques pour l’informatique</span>
+              </div>
+              <div class="ac-level">
+                <div class="mini-level-bar level-3">
+                  <span class="mini-level-fill"></span>
+                </div>
+                <span class="mini-level-text">3/4</span>
+              </div>
+            </div>
+
+            <div class="ac-item">
+              <div class="ac-header">
+                <span class="ac-code">AC22.01</span>
+                <span class="ac-name">Choisir des structures de données complexes adaptées au problème</span>
+              </div>
+              <div class="ac-level">
+                <div class="mini-level-bar level-2">
+                  <span class="mini-level-fill"></span>
+                </div>
+                <span class="mini-level-text">2/4</span>
+              </div>
+            </div>
+
+            <div class="ac-item">
+              <div class="ac-header">
+                <span class="ac-code">AC22.02</span>
+                <span class="ac-name">Utiliser des techniques algorithmiques adaptées pour des problèmes complexes (par
+                  ex. recherche opérationnelle, méthodes arborescentes, optimisation globale, intelligence
+                  artificielle...)</span>
+              </div>
+              <div class="ac-level">
+                <div class="mini-level-bar level-2">
+                  <span class="mini-level-fill"></span>
+                </div>
+                <span class="mini-level-text">2/4</span>
+              </div>
+            </div>
+
+            <div class="ac-item">
+              <div class="ac-header">
+                <span class="ac-code">AC22.03</span>
+                <span class="ac-name">Comprendre les enjeux et moyens de sécurisation des données et du code</span>
+              </div>
+              <div class="ac-level">
+                <div class="mini-level-bar level-2">
+                  <span class="mini-level-fill"></span>
+                </div>
+                <span class="mini-level-text">2/4</span>
+              </div>
+            </div>
+
+            <div class="ac-item">
+              <div class="ac-header">
+                <span class="ac-code">AC22.04</span>
+                <span class="ac-name">Évaluer l’impact environnemental et sociétal des solutions proposées</span>
+              </div>
+              <div class="ac-level">
+                <div class="mini-level-bar level-2">
+                  <span class="mini-level-fill"></span>
+                </div>
+                <span class="mini-level-text">2/4</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- C3: Administrer -->
+        <div class="competence-card expandable">
+          <div class="competence-header">
+            <div class="competence-icon" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">
+              <i class="fas fa-server"></i>
+            </div>
+            <div class="competence-title-wrapper">
+              <h3>Administrer</h3>
+              <p>Installer et configurer un poste de travail</p>
+            </div>
+          </div>
+          <div class="competence-level">
+            <div class="level-indicator">
+              <div class="level-bar level-3" data-level="3">
+                <span class="level-fill"></span>
+              </div>
+              <div class="level-text">Niveau 3/4</div>
+            </div>
+          </div>
+
+          <button class="ac-toggle">
+            <i class="fas fa-chevron-down"></i>
+            Voir les Apprentissages Critiques
+          </button>
+
+          <div class="ac-list">
+            <div class="ac-item">
+              <div class="ac-header">
+                <span class="ac-code">AC13.01</span>
+                <span class="ac-name">Identifier les différents composants (matériels et logiciels) d’un système
+                  numérique</span>
+              </div>
+              <div class="ac-level">
+                <div class="mini-level-bar level-2">
+                  <span class="mini-level-fill"></span>
+                </div>
+                <span class="mini-level-text">2/4</span>
+              </div>
+            </div>
+
+            <div class="ac-item">
+              <div class="ac-header">
+                <span class="ac-code">AC13.02</span>
+                <span class="ac-name">Utiliser les fonctionnalités de base d’un système multitâches /
+                  multiutilisateurs</span>
+              </div>
+              <div class="ac-level">
+                <div class="mini-level-bar level-2">
+                  <span class="mini-level-fill"></span>
+                </div>
+                <span class="mini-level-text">2/4</span>
+              </div>
+            </div>
+
+            <div class="ac-item">
+              <div class="ac-header">
+                <span class="ac-code">AC13.03</span>
+                <span class="ac-name">Installer et configurer un système d’exploitation et des outils de
+                  développement</span>
+              </div>
+              <div class="ac-level">
+                <div class="mini-level-bar level-2">
+                  <span class="mini-level-fill"></span>
+                </div>
+                <span class="mini-level-text">2/4</span>
+              </div>
+            </div>
+
+            <div class="ac-item">
+              <div class="ac-header">
+                <span class="ac-code">AC13.04</span>
+                <span class="ac-name">Configurer un poste de travail dans un réseau d’entreprise</span>
+              </div>
+              <div class="ac-level">
+                <div class="mini-level-bar level-2">
+                  <span class="mini-level-fill"></span>
+                </div>
+                <span class="mini-level-text">2/4</span>
+              </div>
+            </div>
+
+            <div class="ac-item">
+              <div class="ac-header">
+                <span class="ac-code">AC23.01</span>
+                <span class="ac-name">Concevoir et développer des applications communicantes</span>
+              </div>
+              <div class="ac-level">
+                <div class="mini-level-bar level-2">
+                  <span class="mini-level-fill"></span>
+                </div>
+                <span class="mini-level-text">2/4</span>
+              </div>
+            </div>
+
+            <div class="ac-item">
+              <div class="ac-header">
+                <span class="ac-code">AC23.02</span>
+                <span class="ac-name">Utiliser des serveurs et des services réseaux virtualisés</span>
+              </div>
+              <div class="ac-level">
+                <div class="mini-level-bar level-2">
+                  <span class="mini-level-fill"></span>
+                </div>
+                <span class="mini-level-text">2/4</span>
+              </div>
+            </div>
+
+            <div class="ac-item">
+              <div class="ac-header">
+                <span class="ac-code">AC23.03</span>
+                <span class="ac-name">Sécuriser les services et données d’un système</span>
+              </div>
+              <div class="ac-level">
+                <div class="mini-level-bar level-2">
+                  <span class="mini-level-fill"></span>
+                </div>
+                <span class="mini-level-text">2/4</span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- C4: Gérer -->
+        <div class="competence-card expandable">
+          <div class="competence-header">
+            <div class="competence-icon" style="background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);">
+              <i class="fas fa-database"></i>
+            </div>
+            <div class="competence-title-wrapper">
+              <h3>Gérer</h3>
+              <p>Concevoir et mettre en place une base de données</p>
+            </div>
+          </div>
+          <div class="competence-level">
+            <div class="level-indicator">
+              <div class="level-bar level-2" data-level="2">
+                <span class="level-fill"></span>
+              </div>
+              <div class="level-text">Niveau 2/4</div>
+            </div>
+          </div>
+
+          <button class="ac-toggle">
+            <i class="fas fa-chevron-down"></i>
+            Voir les Apprentissages Critiques
+          </button>
+
+          <div class="ac-list">
+            <div class="ac-item">
+              <div class="ac-header">
+                <span class="ac-code">AC14.01</span>
+                <span class="ac-name">Mettre à jour et interroger une base de données relationnelle (en requêtes
+                  directes ou à travers une application)</span>
+              </div>
+              <div class="ac-level">
+                <div class="mini-level-bar level-3">
+                  <span class="mini-level-fill"></span>
+                </div>
+                <span class="mini-level-text">3/4</span>
+              </div>
+            </div>
+
+            <div class="ac-item">
+              <div class="ac-header">
+                <span class="ac-code">AC14.02</span>
+                <span class="ac-name">Visualiser des données</span>
+              </div>
+              <div class="ac-level">
+                <div class="mini-level-bar level-3">
+                  <span class="mini-level-fill"></span>
+                </div>
+                <span class="mini-level-text">3/4</span>
+              </div>
+            </div>
+
+            <div class="ac-item">
+              <div class="ac-header">
+                <span class="ac-code">AC14.03</span>
+                <span class="ac-name">Concevoir une base de données relationnelle à partir d’un cahier des
+                  charges</span>
+              </div>
+              <div class="ac-level">
+                <div class="mini-level-bar level-3">
+                  <span class="mini-level-fill"></span>
+                </div>
+                <span class="mini-level-text">3/4</span>
+              </div>
+            </div>
+
+            <div class="ac-item">
+              <div class="ac-header">
+                <span class="ac-code">AC24.01</span>
+                <span class="ac-name">Optimiser les modèles de données de l’entreprise</span>
+              </div>
+              <div class="ac-level">
+                <div class="mini-level-bar level-3">
+                  <span class="mini-level-fill"></span>
+                </div>
+                <span class="mini-level-text">3/4</span>
+              </div>
+            </div>
+
+            <div class="ac-item">
+              <div class="ac-header">
+                <span class="ac-code">AC24.02</span>
+                <span class="ac-name">Assurer la sécurité des données (intégrité et confidentialité)</span>
+              </div>
+              <div class="ac-level">
+                <div class="mini-level-bar level-3">
+                  <span class="mini-level-fill"></span>
+                </div>
+                <span class="mini-level-text">3/4</span>
+              </div>
+            </div>
+
+            <div class="ac-item">
+              <div class="ac-header">
+                <span class="ac-code">AC24.03</span>
+                <span class="ac-name">Organiser la restitution de données à travers la programmation et la
+                  visualisation</span>
+              </div>
+              <div class="ac-level">
+                <div class="mini-level-bar level-3">
+                  <span class="mini-level-fill"></span>
+                </div>
+                <span class="mini-level-text">3/4</span>
+              </div>
+            </div>
+
+            <div class="ac-item">
+              <div class="ac-header">
+                <span class="ac-code">AC24.04</span>
+                <span class="ac-name">Manipuler des données hétérogènes</span>
+              </div>
+              <div class="ac-level">
+                <div class="mini-level-bar level-3">
+                  <span class="mini-level-fill"></span>
+                </div>
+                <span class="mini-level-text">3/4</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- C5: Conduire -->
+        <div class="competence-card expandable">
+          <div class="competence-header">
+            <div class="competence-icon" style="background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);">
+              <i class="fas fa-project-diagram"></i>
+            </div>
+            <div class="competence-title-wrapper">
+              <h3>Conduire</h3>
+              <p>Satisfaire les besoins des utilisateurs</p>
+            </div>
+          </div>
+          <div class="competence-level">
+            <div class="level-indicator">
+              <div class="level-bar level-3" data-level="3">
+                <span class="level-fill"></span>
+              </div>
+              <div class="level-text">Niveau 3/4</div>
+            </div>
+          </div>
+
+          <button class="ac-toggle">
+            <i class="fas fa-chevron-down"></i>
+            Voir les Apprentissages Critiques
+          </button>
+
+          <div class="ac-list">
+            <div class="ac-item">
+              <div class="ac-header">
+                <span class="ac-code">AC15.01</span>
+                <span class="ac-name">Appréhender les besoins du client et de l'utilisateur</span>
+              </div>
+              <div class="ac-level">
+                <div class="mini-level-bar level-2">
+                  <span class="mini-level-fill"></span>
+                </div>
+                <span class="mini-level-text">2/4</span>
+              </div>
+            </div>
+            <div class="ac-item">
+              <div class="ac-header">
+                <span class="ac-code">AC15.02</span>
+                <span class="ac-name">Mettre en place les outils de gestion de projet</span>
+              </div>
+              <div class="ac-level">
+                <div class="mini-level-bar level-2">
+                  <span class="mini-level-fill"></span>
+                </div>
+                <span class="mini-level-text">2/4</span>
+              </div>
+            </div>
+            <div class="ac-item">
+              <div class="ac-header">
+                <span class="ac-code">AC15.03</span>
+                <span class="ac-name">Identifier les acteurs et les différentes phases d’un cycle de
+                  développement</span>
+              </div>
+              <div class="ac-level">
+                <div class="mini-level-bar level-2">
+                  <span class="mini-level-fill"></span>
+                </div>
+                <span class="mini-level-text">2/4</span>
+              </div>
+            </div>
+            <div class="ac-item">
+              <div class="ac-header">
+                <span class="ac-code">AC25.01</span>
+                <span class="ac-name">Identifier les processus présents dans une organisation en vue d’améliorer les
+                  systèmes d’information</span>
+              </div>
+              <div class="ac-level">
+                <div class="mini-level-bar level-2">
+                  <span class="mini-level-fill"></span>
+                </div>
+                <span class="mini-level-text">2/4</span>
+              </div>
+            </div>
+            <div class="ac-item">
+              <div class="ac-header">
+                <span class="ac-code">AC25.02</span>
+                <span class="ac-name">Formaliser les besoins du client et de l'utilisateur</span>
+              </div>
+              <div class="ac-level">
+                <div class="mini-level-bar level-2">
+                  <span class="mini-level-fill"></span>
+                </div>
+                <span class="mini-level-text">2/4</span>
+              </div>
+            </div>
+            <div class="ac-item">
+              <div class="ac-header">
+                <span class="ac-code">AC25.03</span>
+                <span class="ac-name">Identifier les critères de faisabilité d’un projet informatique</span>
+              </div>
+              <div class="ac-level">
+                <div class="mini-level-bar level-2">
+                  <span class="mini-level-fill"></span>
+                </div>
+                <span class="mini-level-text">2/4</span>
+              </div>
+            </div>
+            <div class="ac-item">
+              <div class="ac-header">
+                <span class="ac-code">AC25.04</span>
+                <span class="ac-name">Définir et mettre en œuvre une démarche de suivi de projet</span>
+              </div>
+              <div class="ac-level">
+                <div class="mini-level-bar level-2">
+                  <span class="mini-level-fill"></span>
+                </div>
+                <span class="mini-level-text">2/4</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- C6: Collaborer -->
+        <div class="competence-card expandable">
+          <div class="competence-header">
+            <div class="competence-icon" style="background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);">
+              <i class="fas fa-users"></i>
+            </div>
+            <div class="competence-title-wrapper">
+              <h3>Collaborer</h3>
+              <p>Travailler efficacement en équipe</p>
+            </div>
+          </div>
+          <div class="competence-level">
+            <div class="level-indicator">
+              <div class="level-bar level-2" data-level="2">
+                <span class="level-fill"></span>
+              </div>
+              <div class="level-text">Niveau 2/4</div>
+            </div>
+          </div>
+
+          <button class="ac-toggle">
+            <i class="fas fa-chevron-down"></i>
+            Voir les Apprentissages Critiques
+          </button>
+
+          <div class="ac-list">
+            <div class="ac-item">
+              <div class="ac-header">
+                <span class="ac-code">AC16.01</span>
+                <span class="ac-name">Appréhender l’écosystème numérique</span>
+              </div>
+              <div class="ac-level">
+                <div class="mini-level-bar level-3">
+                  <span class="mini-level-fill"></span>
+                </div>
+                <span class="mini-level-text">3/4</span>
+              </div>
+            </div>
+            <div class="ac-item">
+              <div class="ac-header">
+                <span class="ac-code">AC16.02</span>
+                <span class="ac-name">Découvrir les aptitudes requises selon les différents secteurs
+                  informatiques</span>
+              </div>
+              <div class="ac-level">
+                <div class="mini-level-bar level-3">
+                  <span class="mini-level-fill"></span>
+                </div>
+                <span class="mini-level-text">3/4</span>
+              </div>
+            </div>
+            <div class="ac-item">
+              <div class="ac-header">
+                <span class="ac-code">AC16.03</span>
+                <span class="ac-name">Identifier les statuts, les fonctions et les rôles de chaque membre d’une équipe
+                  pluridisciplinaire</span>
+              </div>
+              <div class="ac-level">
+                <div class="mini-level-bar level-3">
+                  <span class="mini-level-fill"></span>
+                </div>
+                <span class="mini-level-text">3/4</span>
+              </div>
+            </div>
+            <div class="ac-item">
+              <div class="ac-header">
+                <span class="ac-code">AC16.04</span>
+                <span class="ac-name">Acquérir les compétences interpersonnelles pour travailler en équipe</span>
+              </div>
+              <div class="ac-level">
+                <div class="mini-level-bar level-3">
+                  <span class="mini-level-fill"></span>
+                </div>
+                <span class="mini-level-text">3/4</span>
+              </div>
+            </div>
+            <div class="ac-item">
+              <div class="ac-header">
+                <span class="ac-code">AC26.01</span>
+                <span class="ac-name">Comprendre la diversité, la structure et la dimension de l’informatique dans une
+                  organisation (ESN, DSI,...)</span>
+              </div>
+              <div class="ac-level">
+                <div class="mini-level-bar level-3">
+                  <span class="mini-level-fill"></span>
+                </div>
+                <span class="mini-level-text">3/4</span>
+              </div>
+            </div>
+            <div class="ac-item">
+              <div class="ac-header">
+                <span class="ac-code">AC26.02</span>
+                <span class="ac-name">Appliquer une démarche pour intégrer une équipe informatique au sein d’une
+                  organisation</span>
+              </div>
+              <div class="ac-level">
+                <div class="mini-level-bar level-3">
+                  <span class="mini-level-fill"></span>
+                </div>
+                <span class="mini-level-text">3/4</span>
+              </div>
+            </div>
+            <div class="ac-item">
+              <div class="ac-header">
+                <span class="ac-code">AC26.03</span>
+                <span class="ac-name">Mobiliser les compétences interpersonnelles pour travailler dans une équipe
+                  informatique</span>
+              </div>
+              <div class="ac-level">
+                <div class="mini-level-bar level-3">
+                  <span class="mini-level-fill"></span>
+                </div>
+                <span class="mini-level-text">3/4</span>
+              </div>
+            </div>
+            <div class="ac-item">
+              <div class="ac-header">
+                <span class="ac-code">AC26.04</span>
+                <span class="ac-name">Rendre compte de son activité professionnelle</span>
+              </div>
+              <div class="ac-level">
+                <div class="mini-level-bar level-3">
+                  <span class="mini-level-fill"></span>
+                </div>
+                <span class="mini-level-text">3/4</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Dark Mode Toggle -->
+  <button class="dark-mode-toggle" id="darkModeToggle" aria-label="Toggle dark mode">
+    <i class="fas fa-moon"></i>
+  </button>
+
+  <script>
+    // Dark Mode Toggle
+    const darkModeToggle = document.getElementById('darkModeToggle');
+    const body = document.body;
+    const darkModeIcon = darkModeToggle.querySelector('i');
+
+    // Check for saved theme preference or default to light mode
+    const currentTheme = localStorage.getItem('theme') || 'light';
+    if (currentTheme === 'dark') {
+      body.classList.add('dark-mode');
+      darkModeIcon.classList.remove('fa-moon');
+      darkModeIcon.classList.add('fa-sun');
+    }
+
+    // Toggle dark mode
+    darkModeToggle.addEventListener('click', () => {
+      body.classList.toggle('dark-mode');
+
+      // Switch icon
+      if (body.classList.contains('dark-mode')) {
+        darkModeIcon.classList.remove('fa-moon');
+        darkModeIcon.classList.add('fa-sun');
+        localStorage.setItem('theme', 'dark');
+      } else {
+        darkModeIcon.classList.remove('fa-sun');
+        darkModeIcon.classList.add('fa-moon');
+        localStorage.setItem('theme', 'light');
+      }
+    });
+
+    // Toggle pour les Apprentissages Critiques (AC)
+    document.addEventListener('DOMContentLoaded', function () {
+      const acToggles = document.querySelectorAll('.ac-toggle');
+
+      acToggles.forEach(toggle => {
+        toggle.addEventListener('click', function () {
+          const card = this.closest('.competence-card');
+          const acList = card.querySelector('.ac-list');
+
+          // Toggle active class
+          this.classList.toggle('active');
+          acList.classList.toggle('active');
+
+          // Animer les mini barres de niveau quand la liste s'ouvre
+          if (acList.classList.contains('active')) {
+            setTimeout(() => {
+              const miniBars = acList.querySelectorAll('.mini-level-fill');
+              miniBars.forEach(bar => {
+                bar.style.opacity = '1';
+              });
+            }, 200);
+          }
+        });
+      });
+    });
+  </script>
+</body>
+
+</html>
