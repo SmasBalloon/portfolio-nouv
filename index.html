@@ -2,418 +2,483 @@
 <html lang="fr">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio - Mathis Sauvage</title>
-    <link rel="stylesheet" href="styles.css">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mathis Sauvage — Développeur Full Stack</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 
 <body>
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <div class="nav-logo">
-                <a href="#home">Portfolio</a>
-            </div>
-            <ul class="nav-menu">
-                <li class="nav-item">
-                    <a href="#home" class="nav-link">Accueil</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#about" class="nav-link">À propos</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#skills" class="nav-link">Mes competence</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#timeline" class="nav-link">Parcours</a>
-                </li>
-                <li class="nav-item">
-                    <a href="but-competences.html" class="nav-link">BUT</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#projects" class="nav-link">Projets</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#contact" class="nav-link">Contact</a>
-                </li>
-            </ul>
-            <div class="nav-toggle">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </div>
-        </div>
-    </nav>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="hero-container">
-            <div class="hero-content">
-                <h1 class="hero-title">
-                    Salut, je suis <span class="highlight">Mathis Sauvage</span>
-                </h1>
-                <h2 class="hero-subtitle">Développeur Full Stack</h2>
-                <p class="hero-description">
-                    Je crée des applications web modernes et performantes avec passion et expertise.
-                    Spécialisé en JavaScript, React, Node.js et plus encore.
-                </p>
-                <div class="hero-buttons">
-                    <a href="#projects" class="btn btn-primary">Voir mes projets</a>
-                    <a href="#contact" class="btn btn-secondary">Me contacter</a>
-                </div>
-            </div>
-            <div class="hero-image">
-                <div class="hero-avatar">
-                    <i class="fas fa-user-tie"></i>
-                </div>
-            </div>
+  <!-- ─── Navigation ─────────────────────────────────── -->
+  <header class="navbar" id="navbar">
+    <div class="nav-inner">
+      <a href="#home" class="nav-brand">MS</a>
+      <nav class="nav-links" id="navLinks">
+        <a href="#home">Accueil</a>
+        <a href="#about">À propos</a>
+        <a href="#skills">Compétences</a>
+        <a href="#timeline">Parcours</a>
+        <a href="#but">BUT</a>
+        <a href="#projects">Projets</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <button class="nav-hamburger" id="hamburger" aria-label="Menu">
+        <i data-lucide="menu"></i>
+      </button>
+    </div>
+  </header>
+
+  <!-- ─── Hero ───────────────────────────────────────── -->
+  <section id="home" class="hero">
+    <div class="hero-inner">
+      <div class="hero-text">
+        <p class="hero-eyebrow">Salut, je suis</p>
+        <h1 class="hero-name">Mathis <span>Sauvage</span></h1>
+        <h2 class="hero-role">Développeur Full Stack</h2>
+        <p class="hero-desc">
+          Je crée des applications web modernes et performantes avec passion et expertise.
+          Spécialisé en JavaScript, React, Node.js et plus encore.
+        </p>
+        <div class="hero-actions">
+          <a href="#projects" class="btn btn-primary">Voir mes projets</a>
+          <a href="#contact" class="btn btn-ghost">Me contacter</a>
         </div>
-        <div class="scroll-indicator">
-            <a href="#about">
-                <i class="fas fa-chevron-down"></i>
+      </div>
+      <div class="hero-badge">
+        <i data-lucide="code-2"></i>
+      </div>
+    </div>
+    <a href="#about" class="scroll-down" aria-label="Défiler">
+      <i data-lucide="chevron-down"></i>
+    </a>
+  </section>
+
+  <!-- ─── À propos ────────────────────────────────────── -->
+  <section id="about" class="section">
+    <div class="container">
+      <h2 class="section-heading">À propos de moi</h2>
+      <div class="about-grid">
+        <div class="about-text">
+          <p>
+            Développeur Full Stack passionné depuis plusieurs années, j'ai acquis une solide expérience dans
+            la création d'applications web modernes. Je maîtrise l'ensemble de la chaîne de développement,
+            du front-end au back-end, en passant par les bases de données et le déploiement.
+          </p>
+          <p>
+            Mon approche se concentre sur l'écriture de code propre, maintenable et performant.
+            J'aime résoudre des problèmes complexes et créer des expériences utilisateur exceptionnelles.
+          </p>
+          <div class="stats-row">
+            <div class="stat-box">
+              <strong>10+</strong>
+              <span>Projets complétés</span>
+            </div>
+            <div class="stat-box">
+              <strong>1+</strong>
+              <span>Années d'expérience</span>
+            </div>
+            <div class="stat-box">
+              <strong>100%</strong>
+              <span>Satisfaction client</span>
+            </div>
+          </div>
+        </div>
+        <div class="about-visual">
+          <i data-lucide="terminal"></i>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Compétences techniques ──────────────────────── -->
+  <section id="skills" class="section section-alt">
+    <div class="container">
+      <h2 class="section-heading">Compétences</h2>
+      <div class="skills-cols">
+
+        <div class="skills-group">
+          <h3><i data-lucide="monitor"></i> Frontend</h3>
+          <ul class="skill-list">
+            <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML5"> HTML5</li>
+            <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS3"> CSS3</li>
+            <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JS"> JavaScript</li>
+            <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" alt="TS"> TypeScript</li>
+            <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React"> React</li>
+            <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg" alt="Next.js" class="invert-icon"> Next.js</li>
+          </ul>
+        </div>
+
+        <div class="skills-group">
+          <h3><i data-lucide="server"></i> Backend</h3>
+          <ul class="skill-list">
+            <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node.js"> Node.js</li>
+            <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg" alt="Express" class="invert-icon"> Express.js</li>
+            <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python"> Python</li>
+            <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/prisma/prisma-original.svg" alt="Prisma" class="invert-icon"> Prisma</li>
+            <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" alt="PostgreSQL"> PostgreSQL</li>
+          </ul>
+        </div>
+
+        <div class="skills-group">
+          <h3><i data-lucide="wrench"></i> Outils & DevOps</h3>
+          <ul class="skill-list">
+            <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git"> Git</li>
+            <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg" alt="Linux"> Linux</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Parcours ────────────────────────────────────── -->
+  <section id="timeline" class="section">
+    <div class="container">
+      <h2 class="section-heading">Parcours</h2>
+      <div class="timeline">
+
+        <div class="tl-item">
+          <div class="tl-dot"><i data-lucide="graduation-cap"></i></div>
+          <div class="tl-card">
+            <span class="tl-date">2022 — 2024</span>
+            <h3>Baccalauréat STI2D (SIN)</h3>
+            <h4>Sciences et Technologies de l'Industrie et du Développement Durable</h4>
+            <p>Spécialité Systèmes d'Information et Numérique</p>
+            <p class="tl-detail">
+              Formation axée sur l'informatique et le numérique avec apprentissage de la programmation,
+              des réseaux et des systèmes embarqués.
+            </p>
+          </div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-dot tl-dot--current"><i data-lucide="laptop"></i></div>
+          <div class="tl-card">
+            <span class="tl-date">2024 — Maintenant</span>
+            <h3>BUT Informatique</h3>
+            <h4>Formation supérieure en développement</h4>
+            <p>Spécialisation en développement web et applications</p>
+            <p class="tl-detail">
+              Approfondissement des compétences en développement full-stack, bases de données, et
+              gestion de projets informatiques.
+            </p>
+            <span class="badge-current"><i data-lucide="circle-dot"></i> En cours</span>
+          </div>
+        </div>
+
+        <div class="tl-item tl-item--future">
+          <div class="tl-dot tl-dot--future"><i data-lucide="rocket"></i></div>
+          <div class="tl-card">
+            <span class="tl-date">2026+</span>
+            <h3>Objectifs futurs</h3>
+            <h4>Développeur Full-Stack confirmé</h4>
+            <p>Spécialisation avancée et projets ambitieux</p>
+            <p class="tl-detail">
+              Poursuite d'études ou entrée dans la vie professionnelle en tant que développeur
+              full-stack avec expertise en technologies modernes.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── BUT Compétences ─────────────────────────────── -->
+  <section id="but" class="section section-alt">
+    <div class="container">
+      <h2 class="section-heading">Compétences BUT Informatique</h2>
+      <p class="section-sub">Bachelor Universitaire de Technologie — Référentiel National</p>
+      <div class="but-grid">
+
+        <div class="but-card">
+          <div class="but-card-header" style="--card-color: #6366f1;">
+            <div class="but-icon"><i data-lucide="code-2"></i></div>
+            <div><h3>Réaliser</h3><p>Développer une application</p></div>
+          </div>
+          <div class="but-level">
+            <div class="level-track"><div class="level-fill" style="width: 100%;"></div></div>
+            <span>Niveau 4/4</span>
+          </div>
+          <button class="ac-toggle"><i data-lucide="chevron-down"></i> Apprentissages Critiques</button>
+          <div class="ac-list">
+            <div class="ac-item"><span class="ac-code">AC11.01</span><span>Implémenter des conceptions simples</span><span class="ac-lvl">3/4</span></div>
+            <div class="ac-item"><span class="ac-code">AC11.02</span><span>Élaborer des conceptions simples</span><span class="ac-lvl">3/4</span></div>
+            <div class="ac-item"><span class="ac-code">AC11.03</span><span>Faire des essais et évaluer leurs résultats</span><span class="ac-lvl">2/4</span></div>
+            <div class="ac-item"><span class="ac-code">AC11.04</span><span>Développer des interfaces utilisateurs</span><span class="ac-lvl">4/4</span></div>
+            <div class="ac-item"><span class="ac-code">AC21.01</span><span>Élaborer et implémenter les spécifications fonctionnelles</span><span class="ac-lvl">4/4</span></div>
+            <div class="ac-item"><span class="ac-code">AC21.02</span><span>Appliquer des principes d'accessibilité et d'ergonomie</span><span class="ac-lvl">2/4</span></div>
+            <div class="ac-item"><span class="ac-code">AC21.03</span><span>Adopter de bonnes pratiques de conception et de programmation</span><span class="ac-lvl">2/4</span></div>
+            <div class="ac-item"><span class="ac-code">AC21.04</span><span>Vérifier et valider la qualité de l'application par les tests</span><span class="ac-lvl">3/4</span></div>
+          </div>
+        </div>
+
+        <div class="but-card">
+          <div class="but-card-header" style="--card-color: #ec4899;">
+            <div class="but-icon"><i data-lucide="zap"></i></div>
+            <div><h3>Optimiser</h3><p>Appréhender et construire des algorithmes</p></div>
+          </div>
+          <div class="but-level">
+            <div class="level-track"><div class="level-fill" style="width: 75%;"></div></div>
+            <span>Niveau 3/4</span>
+          </div>
+          <button class="ac-toggle"><i data-lucide="chevron-down"></i> Apprentissages Critiques</button>
+          <div class="ac-list">
+            <div class="ac-item"><span class="ac-code">AC12.01</span><span>Analyser un problème avec méthode</span><span class="ac-lvl">3/4</span></div>
+            <div class="ac-item"><span class="ac-code">AC12.02</span><span>Comparer des algorithmes pour des problèmes classiques</span><span class="ac-lvl">2/4</span></div>
+            <div class="ac-item"><span class="ac-code">AC12.03</span><span>Formaliser et mettre en œuvre des outils mathématiques</span><span class="ac-lvl">1/4</span></div>
+            <div class="ac-item"><span class="ac-code">AC22.01</span><span>Choisir des structures de données complexes</span><span class="ac-lvl">3/4</span></div>
+            <div class="ac-item"><span class="ac-code">AC22.02</span><span>Utiliser des techniques algorithmiques adaptées</span><span class="ac-lvl">2/4</span></div>
+            <div class="ac-item"><span class="ac-code">AC22.03</span><span>Comprendre les enjeux de sécurisation des données</span><span class="ac-lvl">3/4</span></div>
+            <div class="ac-item"><span class="ac-code">AC22.04</span><span>Évaluer l'impact environnemental et sociétal</span><span class="ac-lvl">2/4</span></div>
+          </div>
+        </div>
+
+        <div class="but-card">
+          <div class="but-card-header" style="--card-color: #0ea5e9;">
+            <div class="but-icon"><i data-lucide="server"></i></div>
+            <div><h3>Administrer</h3><p>Installer et configurer un poste de travail</p></div>
+          </div>
+          <div class="but-level">
+            <div class="level-track"><div class="level-fill" style="width: 75%;"></div></div>
+            <span>Niveau 3/4</span>
+          </div>
+          <button class="ac-toggle"><i data-lucide="chevron-down"></i> Apprentissages Critiques</button>
+          <div class="ac-list">
+            <div class="ac-item"><span class="ac-code">AC13.01</span><span>Identifier les composants d'un système numérique</span><span class="ac-lvl">3/4</span></div>
+            <div class="ac-item"><span class="ac-code">AC13.02</span><span>Utiliser les fonctionnalités d'un système multitâches</span><span class="ac-lvl">3/4</span></div>
+            <div class="ac-item"><span class="ac-code">AC13.03</span><span>Installer et configurer un système d'exploitation</span><span class="ac-lvl">4/4</span></div>
+            <div class="ac-item"><span class="ac-code">AC13.04</span><span>Configurer un poste dans un réseau d'entreprise</span><span class="ac-lvl">4/4</span></div>
+            <div class="ac-item"><span class="ac-code">AC23.01</span><span>Concevoir et développer des applications communicantes</span><span class="ac-lvl">2/4</span></div>
+            <div class="ac-item"><span class="ac-code">AC23.02</span><span>Utiliser des serveurs et services réseaux virtualisés</span><span class="ac-lvl">3/4</span></div>
+            <div class="ac-item"><span class="ac-code">AC23.03</span><span>Sécuriser les services et données d'un système</span><span class="ac-lvl">2/4</span></div>
+          </div>
+        </div>
+
+        <div class="but-card">
+          <div class="but-card-header" style="--card-color: #10b981;">
+            <div class="but-icon"><i data-lucide="database"></i></div>
+            <div><h3>Gérer</h3><p>Concevoir et mettre en place une base de données</p></div>
+          </div>
+          <div class="but-level">
+            <div class="level-track"><div class="level-fill" style="width: 75%;"></div></div>
+            <span>Niveau 3/4</span>
+          </div>
+          <button class="ac-toggle"><i data-lucide="chevron-down"></i> Apprentissages Critiques</button>
+          <div class="ac-list">
+            <div class="ac-item"><span class="ac-code">AC14.01</span><span>Mettre à jour et interroger une base de données relationnelle</span><span class="ac-lvl">3/4</span></div>
+            <div class="ac-item"><span class="ac-code">AC14.02</span><span>Visualiser des données</span><span class="ac-lvl">3/4</span></div>
+            <div class="ac-item"><span class="ac-code">AC14.03</span><span>Concevoir une BDD relationnelle à partir d'un cahier des charges</span><span class="ac-lvl">3/4</span></div>
+            <div class="ac-item"><span class="ac-code">AC24.01</span><span>Optimiser les modèles de données de l'entreprise</span><span class="ac-lvl">2/4</span></div>
+            <div class="ac-item"><span class="ac-code">AC24.02</span><span>Assurer la sécurité des données</span><span class="ac-lvl">3/4</span></div>
+            <div class="ac-item"><span class="ac-code">AC24.03</span><span>Organiser la restitution de données par la programmation</span><span class="ac-lvl">3/4</span></div>
+            <div class="ac-item"><span class="ac-code">AC24.04</span><span>Manipuler des données hétérogènes</span><span class="ac-lvl">3/4</span></div>
+          </div>
+        </div>
+
+        <div class="but-card">
+          <div class="but-card-header" style="--card-color: #f59e0b;">
+            <div class="but-icon"><i data-lucide="git-branch"></i></div>
+            <div><h3>Conduire</h3><p>Satisfaire les besoins des utilisateurs</p></div>
+          </div>
+          <div class="but-level">
+            <div class="level-track"><div class="level-fill" style="width: 50%;"></div></div>
+            <span>Niveau 2/4</span>
+          </div>
+          <button class="ac-toggle"><i data-lucide="chevron-down"></i> Apprentissages Critiques</button>
+          <div class="ac-list">
+            <div class="ac-item"><span class="ac-code">AC15.01</span><span>Appréhender les besoins du client et de l'utilisateur</span><span class="ac-lvl">3/4</span></div>
+            <div class="ac-item"><span class="ac-code">AC15.02</span><span>Mettre en place les outils de gestion de projet</span><span class="ac-lvl">2/4</span></div>
+            <div class="ac-item"><span class="ac-code">AC15.03</span><span>Identifier les acteurs et phases d'un cycle de développement</span><span class="ac-lvl">2/4</span></div>
+            <div class="ac-item"><span class="ac-code">AC25.01</span><span>Identifier les processus présents dans une organisation</span><span class="ac-lvl">2/4</span></div>
+            <div class="ac-item"><span class="ac-code">AC25.02</span><span>Formaliser les besoins du client et de l'utilisateur</span><span class="ac-lvl">2/4</span></div>
+            <div class="ac-item"><span class="ac-code">AC25.03</span><span>Identifier les critères de faisabilité d'un projet</span><span class="ac-lvl">2/4</span></div>
+            <div class="ac-item"><span class="ac-code">AC25.04</span><span>Définir et mettre en œuvre une démarche de suivi de projet</span><span class="ac-lvl">2/4</span></div>
+          </div>
+        </div>
+
+        <div class="but-card">
+          <div class="but-card-header" style="--card-color: #a855f7;">
+            <div class="but-icon"><i data-lucide="users"></i></div>
+            <div><h3>Collaborer</h3><p>Travailler efficacement en équipe</p></div>
+          </div>
+          <div class="but-level">
+            <div class="level-track"><div class="level-fill" style="width: 75%;"></div></div>
+            <span>Niveau 3/4</span>
+          </div>
+          <button class="ac-toggle"><i data-lucide="chevron-down"></i> Apprentissages Critiques</button>
+          <div class="ac-list">
+            <div class="ac-item"><span class="ac-code">AC16.01</span><span>Appréhender l'écosystème numérique</span><span class="ac-lvl">3/4</span></div>
+            <div class="ac-item"><span class="ac-code">AC16.02</span><span>Découvrir les aptitudes requises selon les secteurs informatiques</span><span class="ac-lvl">3/4</span></div>
+            <div class="ac-item"><span class="ac-code">AC16.03</span><span>Identifier les statuts et rôles d'une équipe pluridisciplinaire</span><span class="ac-lvl">3/4</span></div>
+            <div class="ac-item"><span class="ac-code">AC16.04</span><span>Acquérir les compétences interpersonnelles pour le travail en équipe</span><span class="ac-lvl">2/4</span></div>
+            <div class="ac-item"><span class="ac-code">AC26.01</span><span>Comprendre la diversité de l'informatique dans une organisation</span><span class="ac-lvl">2/4</span></div>
+            <div class="ac-item"><span class="ac-code">AC26.02</span><span>Appliquer une démarche pour intégrer une équipe informatique</span><span class="ac-lvl">3/4</span></div>
+            <div class="ac-item"><span class="ac-code">AC26.03</span><span>Mobiliser les compétences interpersonnelles en équipe informatique</span><span class="ac-lvl">3/4</span></div>
+            <div class="ac-item"><span class="ac-code">AC26.04</span><span>Rendre compte de son activité professionnelle</span><span class="ac-lvl">3/4</span></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Projets ─────────────────────────────────────── -->
+  <section id="projects" class="section">
+    <div class="container">
+      <h2 class="section-heading">Projets</h2>
+      <div class="projects-grid">
+
+        <div class="project-card">
+          <div class="project-icon"><i data-lucide="shield"></i></div>
+          <div class="project-body">
+            <h3>Gestionnaire de Mot de Passe</h3>
+            <p>Application web sécurisée de gestion de mots de passe avec chiffrement côté client et interface moderne.</p>
+            <div class="project-tags">
+              <span>JavaScript</span><span>HTML5</span><span>CSS3</span><span>Cryptage</span>
+            </div>
+            <a href="https://pwd.smashballoon.fr" target="_blank" class="project-link">
+              <i data-lucide="external-link"></i> Voir la démo
             </a>
+          </div>
         </div>
-    </section>
 
-    <!-- About Section -->
-    <section id="about" class="about">
-        <div class="container">
-            <h2 class="section-title">À propos de moi</h2>
-            <div class="about-content">
-                <div class="about-text">
-                    <p>
-                        Développeur Full Stack passionné depuis plusieurs années, j'ai acquis une solide expérience dans
-                        la création
-                        d'applications web modernes. Je maîtrise l'ensemble de la chaîne de développement,
-                        du front-end au back-end, en passant par les bases de données et le déploiement.
-                    </p>
-                    <p>
-                        Mon approche se concentre sur l'écriture de code propre, maintenable et performant.
-                        J'aime résoudre des problèmes complexes et créer des expériences utilisateur exceptionnelles.
-                    </p>
-                    <div class="about-stats">
-                        <div class="stat">
-                            <h3>10+</h3>
-                            <p>Projets complétés</p>
-                        </div>
-                        <div class="stat">
-                            <h3>1+</h3>
-                            <p>Années d'expérience</p>
-                        </div>
-                        <div class="stat">
-                            <h3>100%</h3>
-                            <p>Satisfaction client</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="about-image">
-                    <div class="about-avatar">
-                        <i class="fas fa-code"></i>
-                    </div>
-                </div>
+        <div class="project-card">
+          <div class="project-icon"><i data-lucide="layers"></i></div>
+          <div class="project-body">
+            <h3>Questionnaire</h3>
+            <p>Application de quiz interactifs en temps réel — création de quiz, mode hôte/joueur, 4 types de questions, auth complète.</p>
+            <div class="project-tags">
+              <span>React 19</span><span>TypeScript</span><span>Socket.IO</span><span>NestJS</span><span>Tailwind</span>
             </div>
+            <a href="https://github.com/SmasBalloon/questionnaire-Frontend" target="_blank" class="project-link">
+              <i data-lucide="github"></i> Voir sur GitHub
+            </a>
+          </div>
         </div>
-    </section>
 
-    <!-- Skills Section -->
-    <section id="skills" class="skills">
-        <div class="container">
-            <h2 class="section-title">Mes Compétences</h2>
-            <div class="skills-container">
-                <div class="skills-category">
-                    <h3>Frontend</h3>
-                    <div class="skills-list">
-                        <div class="skill-item">
-                            <i class="fab fa-html5" style="color: #E34F26;"></i>
-                            <span>HTML5</span>
-                        </div>
-                        <div class="skill-item">
-                            <i class="fab fa-css3-alt" style="color: #1572B6;"></i>
-                            <span>CSS3</span>
-                        </div>
-                        <div class="skill-item">
-                            <i class="fab fa-js-square" style="color: #F7DF1E;"></i>
-                            <span>JavaScript</span>
-                        </div>
-
-                        <div class="skill-item">
-                            <i class="fab fa-js-square" style="color: #007ACC;"></i>
-                            <span>TypeScript</span>
-                        </div>
-                        <div class="skill-item">
-                            <i class="fab fa-react" style="color: #61DAFB;"></i>
-                            <span>React</span>
-                        </div>
-                        <div class="skill-item">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg"
-                                alt="Next.js" style="width: 20px; height: 20px;">
-                            <span>Next.js</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="skills-category">
-                    <h3>Backend</h3>
-                    <div class="skills-list">
-                        <div class="skill-item">
-                            <i class="fab fa-node-js" style="color: #339933;"></i>
-                            <span>Node.js</span>
-                        </div>
-                        <div class="skill-item">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg"
-                                alt="Express.js" style="width: 20px; height: 20px;">
-                            <span>Express.js</span>
-                        </div>
-                        <div class="skill-item">
-                            <i class="fab fa-python" style="color: #3776AB;"></i>
-                            <span>Python</span>
-                        </div>
-                        <div class="skill-item">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/prisma/prisma-original.svg"
-                                alt="Prisma" style="width: 20px; height: 20px;">
-                            <span>Prisma</span>
-                        </div>
-                        <div class="skill-item">
-                            <i class="fas fa-database" style="color: #336791;"></i>
-                            <span>PostgreSQL</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="skills-category">
-                    <h3>Outils & DevOps</h3>
-                    <div class="skills-list">
-                        <div class="skill-item">
-                            <i class="fab fa-git-alt" style="color: #F05032;"></i>
-                            <span>Git</span>
-                        </div>
-                        <div class="skill-item">
-                            <i class="fab fa-linux" style="color: #FCC624;"></i>
-                            <span>Linux</span>
-                        </div>
-                    </div>
-                </div>
+        <div class="project-card">
+          <div class="project-icon"><i data-lucide="package"></i></div>
+          <div class="project-body">
+            <h3>DualSync CLI</h3>
+            <p>CLI pour scaffolder des projets full-stack en quelques secondes — choix du framework frontend, backend, BDD et Docker.</p>
+            <div class="project-tags">
+              <span>TypeScript</span><span>Node.js</span><span>Bun</span><span>CLI</span>
             </div>
+            <a href="https://github.com/SmasBalloon/dualsync" target="_blank" class="project-link">
+              <i data-lucide="github"></i> Voir sur GitHub
+            </a>
+          </div>
         </div>
-    </section>
 
-    <!-- Timeline Section -->
-    <section id="timeline" class="timeline">
-        <div class="container">
-            <h2 class="section-title">Mon Parcours</h2>
-            <div class="timeline-container">
-                <div class="timeline-item">
-                    <div class="timeline-marker">
-                        <div class="timeline-icon">
-                            <i class="fas fa-graduation-cap"></i>
-                        </div>
-                    </div>
-                    <div class="timeline-content">
-                        <div class="timeline-date">2022 - 2024</div>
-                        <h3>Baccalauréat STI2D (SIN)</h3>
-                        <h4>Sciences et Technologies de l'Industrie et du Développement Durable</h4>
-                        <p>Spécialité Systèmes d'Information et Numérique</p>
-                        <div class="timeline-details">
-                            <p>Formation axée sur l'informatique et le numérique avec apprentissage de la programmation,
-                                des réseaux et des systèmes embarqués.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="timeline-item">
-                    <div class="timeline-marker">
-                        <div class="timeline-icon current">
-                            <i class="fas fa-laptop-code"></i>
-                        </div>
-                    </div>
-                    <div class="timeline-content">
-                        <div class="timeline-date">2024 - Maintenant</div>
-                        <h3>BUT Informatique</h3>
-                        <h4>Formation supérieure en développement</h4>
-                        <p>Spécialisation en développement web et applications</p>
-                        <div class="timeline-details">
-                            <p>Approfondissement des compétences en développement full-stack, bases de données, et
-                                gestion de projets informatiques.</p>
-                            <div class="current-badge">
-                                <i class="fas fa-clock"></i>
-                                En cours
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="timeline-item future">
-                    <div class="timeline-marker">
-                        <div class="timeline-icon future">
-                            <i class="fas fa-rocket"></i>
-                        </div>
-                    </div>
-                    <div class="timeline-content">
-                        <div class="timeline-date">2026+</div>
-                        <h3>Objectifs futurs</h3>
-                        <h4>Développeur Full-Stack confirmé</h4>
-                        <p>Spécialisation avancée et projets ambitieux</p>
-                        <div class="timeline-details">
-                            <p>Poursuite d'études ou entrée dans la vie professionnelle en tant que développeur
-                                full-stack avec expertise en technologies modernes.</p>
-                        </div>
-                    </div>
-                </div>
+        <div class="project-card">
+          <div class="project-icon"><i data-lucide="calendar"></i></div>
+          <div class="project-body">
+            <h3>API EDT — IUT Limousin</h3>
+            <p>API NestJS qui scrape et parse les PDF d'emploi du temps de l'IUT du Limousin pour les exposer sous forme JSON.</p>
+            <div class="project-tags">
+              <span>NestJS</span><span>TypeScript</span><span>Scraping PDF</span>
             </div>
+            <a href="https://github.com/SmasBalloon/api-edt-unilim" target="_blank" class="project-link">
+              <i data-lucide="github"></i> Voir sur GitHub
+            </a>
+          </div>
         </div>
-    </section>
 
-    <!-- Projects Section -->
-    <section id="projects" class="projects">
-        <div class="container">
-            <h2 class="section-title">Mes Projets</h2>
-            <div class="projects-grid">
-                <div class="project-card">
-                    <div class="project-image">
-                        <i class="fas fa-shield-alt"></i>
-                    </div>
-                    <div class="project-content">
-                        <h3>Gestionnaire de Mot de Passe</h3>
-                        <p>Application sécurisée de gestion de mots de passe avec chiffrement et interface moderne.</p>
-                        <div class="project-tech">
-                            <span>JavaScript</span>
-                            <span>HTML5</span>
-                            <span>CSS3</span>
-                            <span>Cryptage</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://pwd.smashballoon.fr" target="_blank" class="project-link">
-                                <i class="fas fa-external-link-alt"></i> Demo
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-image">
-                        <i class="fas fa-puzzle-piece"></i>
-                    </div>
-                    <div class="project-content">
-                        <h3>Extension Navigateur - Companion PWD</h3>
-                        <p>Extension Chrome/Firefox qui complète le gestionnaire de mot de passe pour une intégration
-                            native dans le navigateur.</p>
-                        <div class="project-tech">
-                            <span>JavaScript</span>
-                            <span>WebExtensions API</span>
-                            <span>Chrome API</span>
-                            <span>Firefox API</span>
-                        </div>
-                        <div class="project-links">
-                            <span class="project-status">
-                                <i class="fas fa-cog"></i> En développement
-                            </span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-image">
-                        <i class="fas fa-mobile-alt"></i>
-                    </div>
-                    <div class="project-content">
-                        <h3>App Mobile - PWD Companion</h3>
-                        <p>Application mobile native pour gérer vos mots de passe en déplacement, synchronisée avec le
-                            gestionnaire web.</p>
-                        <div class="project-tech">
-                            <span>React Native</span>
-                            <span>JavaScript</span>
-                            <span>Cryptage AES</span>
-                            <span>Synchronisation</span>
-                        </div>
-                        <div class="project-links">
-                            <span class="project-status">
-                                <i class="fas fa-cog"></i> En développement
-                            </span>
-                        </div>
-                    </div>
-                </div>
+        <div class="project-card">
+          <div class="project-icon"><i data-lucide="bot"></i></div>
+          <div class="project-body">
+            <h3>Bot Discord</h3>
+            <p>Bot Discord multifonction avec commandes slash, gestion de serveur et automatisations personnalisées.</p>
+            <div class="project-tags">
+              <span>JavaScript</span><span>Discord.js</span><span>Node.js</span>
             </div>
+            <a href="https://github.com/SmasBalloon/bot-discord" target="_blank" class="project-link">
+              <i data-lucide="github"></i> Voir sur GitHub
+            </a>
+          </div>
         </div>
-    </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
-        <div class="container">
-            <h2 class="section-title">Contactez-moi</h2>
-            <div class="contact-content">
-                <div class="contact-info">
-                    <h3>Discutons de votre projet</h3>
-                    <p>
-                        Je suis toujours intéressé par de nouveaux défis et opportunités.
-                        N'hésitez pas à me contacter pour discuter de vos projets.
-                    </p>
-                    <div class="contact-details">
-                        <div class="contact-item">
-                            <i class="fas fa-envelope"></i>
-                            <span>mathis.sauvage24750@gmail.com</span>
-                        </div>
-                        <div class="contact-item">
-                            <i class="fas fa-phone"></i>
-                            <span>+33 6 52 96 83 74 </span>
-                        </div>
-                        <div class="contact-item">
-                            <i class="fas fa-map-marker-alt"></i>
-                            <span>Perigueux, France</span>
-                        </div>
-                    </div>
-                    <div class="social-links">
-                        <a href="https://www.linkedin.com/in/mathis-sauvage-4379b7327/" class="social-link">
-                            <i class="fab fa-linkedin"></i>
-                        </a>
-                        <a href="https://github.com/SmasBalloon" class="social-link">
-                            <i class="fab fa-github"></i>
-                        </a>
-                        <a href="https://www.instagram.com/sauvage_math/" class="social-link">
-                            <i class="fab fa-instagram"></i>
-                        </a>
-                    </div>
-                </div>
-                <form class="contact-form">
-                    <div class="form-group">
-                        <label for="name">Nom</label>
-                        <input type="text" id="name" name="name" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Email</label>
-                        <input type="email" id="email" name="email" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="subject">Sujet</label>
-                        <input type="text" id="subject" name="subject" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="message">Message</label>
-                        <textarea id="message" name="message" rows="5" required></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-primary">Envoyer le message</button>
-                </form>
-            </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Contact ─────────────────────────────────────── -->
+  <section id="contact" class="section section-alt">
+    <div class="container">
+      <h2 class="section-heading">Contact</h2>
+      <div class="contact-grid">
+
+        <div class="contact-info">
+          <h3>Discutons de votre projet</h3>
+          <p>
+            Je suis toujours intéressé par de nouveaux défis et opportunités.
+            N'hésitez pas à me contacter pour discuter de vos projets.
+          </p>
+          <ul class="contact-list">
+            <li>
+              <i data-lucide="mail"></i>
+              <a href="mailto:mathis.sauvage24750@gmail.com">mathis.sauvage24750@gmail.com</a>
+            </li>
+            <li>
+              <i data-lucide="phone"></i>
+              <span>+33 6 52 96 83 74</span>
+            </li>
+            <li>
+              <i data-lucide="map-pin"></i>
+              <span>Périgueux, France</span>
+            </li>
+          </ul>
+          <div class="socials">
+            <a href="https://www.linkedin.com/in/mathis-sauvage-4379b7327/" target="_blank" aria-label="LinkedIn">
+              <i data-lucide="linkedin"></i>
+            </a>
+            <a href="https://github.com/SmasBalloon" target="_blank" aria-label="GitHub">
+              <i data-lucide="github"></i>
+            </a>
+            <a href="https://www.instagram.com/sauvage_math/" target="_blank" aria-label="Instagram">
+              <i data-lucide="instagram"></i>
+            </a>
+          </div>
         </div>
-    </section>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <p>&copy; 2025 Mathis Sauvage. Tous droits réservés.</p>
-                <p>Made with ❤️</p>
-            </div>
-        </div>
-    </footer>
+        <form class="contact-form" id="contactForm">
+          <div class="form-field">
+            <label for="name">Nom</label>
+            <input type="text" id="name" name="name" placeholder="Votre nom" required>
+          </div>
+          <div class="form-field">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="votre@email.com" required>
+          </div>
+          <div class="form-field">
+            <label for="subject">Sujet</label>
+            <input type="text" id="subject" name="subject" placeholder="Sujet du message" required>
+          </div>
+          <div class="form-field">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" placeholder="Votre message..." required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">
+            <i data-lucide="send"></i> Envoyer le message
+          </button>
+        </form>
 
-    <!-- Dark Mode Toggle -->
-    <button class="dark-mode-toggle" id="darkModeToggle" aria-label="Toggle dark mode">
-        <i class="fas fa-moon"></i>
-    </button>
+      </div>
+    </div>
+  </section>
 
-    <script src="script.js"></script>
+  <!-- ─── Footer ──────────────────────────────────────── -->
+  <footer class="footer">
+    <div class="container">
+      <p>© 2025 Mathis Sauvage — Tous droits réservés</p>
+      <p>Made with <i data-lucide="heart" style="display:inline;width:14px;height:14px;color:#f43f5e;vertical-align:middle;"></i></p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 
 </html>
