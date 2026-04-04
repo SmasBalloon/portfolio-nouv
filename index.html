@@ -331,7 +331,7 @@
       <h2 class="section-heading">Projets</h2>
       <div class="projects-grid">
 
-        <div class="project-card">
+        <div class="project-card" role="button" tabindex="0" data-project-id="pwd-manager">
           <div class="project-icon"><i data-lucide="shield"></i></div>
           <div class="project-body">
             <h3>Gestionnaire de Mot de Passe</h3>
@@ -339,13 +339,13 @@
             <div class="project-tags">
               <span>JavaScript</span><span>HTML5</span><span>CSS3</span><span>Cryptage</span>
             </div>
-            <a href="https://pwd.smashballoon.fr" target="_blank" class="project-link">
+            <a href="https://pwd.smashballoon.fr" target="_blank" class="project-link" onclick="event.stopPropagation()">
               <i data-lucide="external-link"></i> Voir la démo
             </a>
           </div>
         </div>
 
-        <div class="project-card">
+        <div class="project-card" role="button" tabindex="0" data-project-id="questionnaire">
           <div class="project-icon"><i data-lucide="layers"></i></div>
           <div class="project-body">
             <h3>Questionnaire</h3>
@@ -353,13 +353,13 @@
             <div class="project-tags">
               <span>React 19</span><span>TypeScript</span><span>Socket.IO</span><span>NestJS</span><span>Tailwind</span>
             </div>
-            <a href="https://github.com/SmasBalloon/questionnaire-Frontend" target="_blank" class="project-link">
+            <a href="https://github.com/SmasBalloon/questionnaire-Frontend" target="_blank" class="project-link" onclick="event.stopPropagation()">
               <i data-lucide="github"></i> Voir sur GitHub
             </a>
           </div>
         </div>
 
-        <div class="project-card">
+        <div class="project-card" role="button" tabindex="0" data-project-id="dualsync">
           <div class="project-icon"><i data-lucide="package"></i></div>
           <div class="project-body">
             <h3>DualSync CLI</h3>
@@ -367,13 +367,13 @@
             <div class="project-tags">
               <span>TypeScript</span><span>Node.js</span><span>Bun</span><span>CLI</span>
             </div>
-            <a href="https://github.com/SmasBalloon/dualsync" target="_blank" class="project-link">
+            <a href="https://github.com/SmasBalloon/dualsync" target="_blank" class="project-link" onclick="event.stopPropagation()">
               <i data-lucide="github"></i> Voir sur GitHub
             </a>
           </div>
         </div>
 
-        <div class="project-card">
+        <div class="project-card" role="button" tabindex="0" data-project-id="api-edt">
           <div class="project-icon"><i data-lucide="calendar"></i></div>
           <div class="project-body">
             <h3>API EDT — IUT Limousin</h3>
@@ -381,13 +381,13 @@
             <div class="project-tags">
               <span>NestJS</span><span>TypeScript</span><span>Scraping PDF</span>
             </div>
-            <a href="https://github.com/SmasBalloon/api-edt-unilim" target="_blank" class="project-link">
+            <a href="https://github.com/SmasBalloon/api-edt-unilim" target="_blank" class="project-link" onclick="event.stopPropagation()">
               <i data-lucide="github"></i> Voir sur GitHub
             </a>
           </div>
         </div>
 
-        <div class="project-card">
+        <div class="project-card" role="button" tabindex="0" data-project-id="bot-discord">
           <div class="project-icon"><i data-lucide="bot"></i></div>
           <div class="project-body">
             <h3>Bot Discord</h3>
@@ -395,7 +395,7 @@
             <div class="project-tags">
               <span>JavaScript</span><span>Discord.js</span><span>Node.js</span>
             </div>
-            <a href="https://github.com/SmasBalloon/bot-discord" target="_blank" class="project-link">
+            <a href="https://github.com/SmasBalloon/bot-discord" target="_blank" class="project-link" onclick="event.stopPropagation()">
               <i data-lucide="github"></i> Voir sur GitHub
             </a>
           </div>
@@ -469,6 +469,59 @@
       </div>
     </div>
   </section>
+
+  <!-- ─── Modal Projet ───────────────────────────────────── -->
+  <div id="projectModal" class="project-modal">
+    <div class="project-modal-overlay"></div>
+    <div class="project-modal-content">
+      <button class="project-modal-close" id="projectModalClose">
+        <i data-lucide="x"></i>
+      </button>
+      <div class="project-modal-inner">
+        <div class="project-modal-header">
+          <div class="project-modal-icon" id="projectModalIcon"></div>
+          <div>
+            <h1 id="projectModalTitle"></h1>
+            <div class="project-modal-tags" id="projectModalTags"></div>
+          </div>
+        </div>
+
+        <div class="project-modal-body">
+          <div class="modal-section">
+            <h2>Compétences ciblées</h2>
+            <ul id="projectTargetSkills"></ul>
+          </div>
+
+          <div class="modal-section">
+            <h2>Description</h2>
+            <ul id="projectDescription"></ul>
+          </div>
+
+          <div class="modal-section">
+            <h2>Rôle personnel</h2>
+            <ul id="projectRole"></ul>
+          </div>
+
+          <div class="modal-section">
+            <h2>Livrables</h2>
+            <ul id="projectDeliverables"></ul>
+          </div>
+
+          <div class="modal-section">
+            <h2>Compétence démontrée</h2>
+            <p id="projectProof"></p>
+          </div>
+
+          <div class="modal-actions">
+            <a href="#" id="projectModalLink" target="_blank" class="btn btn-primary">
+              <i data-lucide="external-link"></i> Accéder au projet
+            </a>
+            <button class="btn btn-ghost" id="projectModalCloseBtn">Fermer</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <!-- ─── Footer ──────────────────────────────────────── -->
   <footer class="footer">
