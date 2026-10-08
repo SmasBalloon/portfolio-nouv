@@ -39,7 +39,7 @@
         <h2 class="hero-role">Développeur Full Stack</h2>
         <p class="hero-desc">
           Je crée des applications web modernes et performantes avec passion et expertise.
-          Spécialisé en JavaScript, React, Node.js et plus encore.
+          Spécialisé en TypeScript, NestJS, SolidJS, React et Laravel, avec un goût pour Rust.
         </p>
         <div class="hero-actions">
           <a href="#projects" class="btn btn-primary">Voir mes projets</a>
@@ -107,6 +107,9 @@
             <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" alt="TS"> TypeScript</li>
             <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React"> React</li>
             <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg" alt="Next.js" class="invert-icon"> Next.js</li>
+            <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/solidjs/solidjs-original.svg" alt="SolidJS"> SolidJS</li>
+            <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg" alt="Vue"> Vue 3</li>
+            <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg" alt="Tailwind"> Tailwind CSS</li>
           </ul>
         </div>
 
@@ -114,10 +117,15 @@
           <h3><i data-lucide="server"></i> Backend</h3>
           <ul class="skill-list">
             <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node.js"> Node.js</li>
+            <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nestjs/nestjs-original.svg" alt="NestJS"> NestJS</li>
             <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg" alt="Express" class="invert-icon"> Express.js</li>
+            <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/rust/rust-original.svg" alt="Rust" class="invert-icon"> Rust</li>
+            <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" alt="PHP"> PHP</li>
+            <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/laravel/laravel-original.svg" alt="Laravel"> Laravel</li>
             <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python"> Python</li>
             <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/prisma/prisma-original.svg" alt="Prisma" class="invert-icon"> Prisma</li>
             <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" alt="PostgreSQL"> PostgreSQL</li>
+            <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redis/redis-original.svg" alt="Redis"> Redis</li>
           </ul>
         </div>
 
@@ -126,6 +134,10 @@
           <ul class="skill-list">
             <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git"> Git</li>
             <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg" alt="Linux"> Linux</li>
+            <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bash/bash-original.svg" alt="Bash" class="invert-icon"> Bash</li>
+            <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="Docker"> Docker</li>
+            <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nginx/nginx-original.svg" alt="Nginx"> Nginx</li>
+            <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/githubactions/githubactions-original.svg" alt="GitHub Actions"> GitHub Actions</li>
           </ul>
         </div>
 
@@ -329,79 +341,14 @@
   <section id="projects" class="section">
     <div class="container">
       <h2 class="section-heading">Projets</h2>
-      <div class="projects-grid">
-
-        <div class="project-card" role="button" tabindex="0" data-project-id="pwd-manager">
-          <div class="project-icon"><i data-lucide="shield"></i></div>
-          <div class="project-body">
-            <h3>Gestionnaire de Mot de Passe</h3>
-            <p>Application web sécurisée de gestion de mots de passe avec chiffrement côté client et interface moderne.</p>
-            <div class="project-tags">
-              <span>JavaScript</span><span>HTML5</span><span>CSS3</span><span>Cryptage</span>
-            </div>
-            <a href="https://pwd.smashballoon.fr" target="_blank" class="project-link" onclick="event.stopPropagation()">
-              <i data-lucide="external-link"></i> Voir la démo
-            </a>
-          </div>
-        </div>
-
-        <div class="project-card" role="button" tabindex="0" data-project-id="questionnaire">
-          <div class="project-icon"><i data-lucide="layers"></i></div>
-          <div class="project-body">
-            <h3>Questionnaire</h3>
-            <p>Application de quiz interactifs en temps réel — création de quiz, mode hôte/joueur, 4 types de questions, auth complète.</p>
-            <div class="project-tags">
-              <span>React 19</span><span>TypeScript</span><span>Socket.IO</span><span>NestJS</span><span>Tailwind</span>
-            </div>
-            <a href="https://github.com/SmasBalloon/questionnaire-Frontend" target="_blank" class="project-link" onclick="event.stopPropagation()">
-              <i data-lucide="github"></i> Voir sur GitHub
-            </a>
-          </div>
-        </div>
-
-        <div class="project-card" role="button" tabindex="0" data-project-id="dualsync">
-          <div class="project-icon"><i data-lucide="package"></i></div>
-          <div class="project-body">
-            <h3>DualSync CLI</h3>
-            <p>CLI pour scaffolder des projets full-stack en quelques secondes — choix du framework frontend, backend, BDD et Docker.</p>
-            <div class="project-tags">
-              <span>TypeScript</span><span>Node.js</span><span>Bun</span><span>CLI</span>
-            </div>
-            <a href="https://github.com/SmasBalloon/dualsync" target="_blank" class="project-link" onclick="event.stopPropagation()">
-              <i data-lucide="github"></i> Voir sur GitHub
-            </a>
-          </div>
-        </div>
-
-        <div class="project-card" role="button" tabindex="0" data-project-id="api-edt">
-          <div class="project-icon"><i data-lucide="calendar"></i></div>
-          <div class="project-body">
-            <h3>API EDT — IUT Limousin</h3>
-            <p>API NestJS qui scrape et parse les PDF d'emploi du temps de l'IUT du Limousin pour les exposer sous forme JSON.</p>
-            <div class="project-tags">
-              <span>NestJS</span><span>TypeScript</span><span>Scraping PDF</span>
-            </div>
-            <a href="https://github.com/SmasBalloon/api-edt-unilim" target="_blank" class="project-link" onclick="event.stopPropagation()">
-              <i data-lucide="github"></i> Voir sur GitHub
-            </a>
-          </div>
-        </div>
-
-        <div class="project-card" role="button" tabindex="0" data-project-id="bot-discord">
-          <div class="project-icon"><i data-lucide="bot"></i></div>
-          <div class="project-body">
-            <h3>Bot Discord</h3>
-            <p>Bot Discord multifonction avec commandes slash, gestion de serveur et automatisations personnalisées.</p>
-            <div class="project-tags">
-              <span>JavaScript</span><span>Discord.js</span><span>Node.js</span>
-            </div>
-            <a href="https://github.com/SmasBalloon/bot-discord" target="_blank" class="project-link" onclick="event.stopPropagation()">
-              <i data-lucide="github"></i> Voir sur GitHub
-            </a>
-          </div>
-        </div>
-
+      <p class="projects-intro">Une sélection de mes dépôts GitHub. Cliquez sur une carte pour voir le détail du projet.</p>
+      <div class="project-filters" id="projectFilters" role="tablist">
+        <button class="project-filter active" data-filter="all">Tous</button>
+        <button class="project-filter" data-filter="web">Applications web</button>
+        <button class="project-filter" data-filter="tools">Outils & bots</button>
+        <button class="project-filter" data-filter="sae">SAÉ IUT</button>
       </div>
+      <div class="projects-grid" id="projectsGrid"></div>
     </div>
   </section>
 
@@ -512,10 +459,13 @@
             <p id="projectProof"></p>
           </div>
 
+          <div class="modal-section">
+            <h2>Stack technique</h2>
+            <div class="project-modal-stack" id="projectStack"></div>
+          </div>
+
           <div class="modal-actions">
-            <a href="#" id="projectModalLink" target="_blank" class="btn btn-primary">
-              <i data-lucide="external-link"></i> Accéder au projet
-            </a>
+            <div class="modal-links" id="projectModalLinks"></div>
             <button class="btn btn-ghost" id="projectModalCloseBtn">Fermer</button>
           </div>
         </div>
