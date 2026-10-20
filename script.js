@@ -183,7 +183,6 @@ function resetDino() {
 
 function dinoJump() {
   if (dinoState !== 'running') {
-    scoreForm.hidden = true;
     resetDino();
     dinoState = 'running';
   }
@@ -229,7 +228,6 @@ function updateDino(step) {
     if (Math.floor(dinoScore) > getDinoBest()) {
       try { localStorage.setItem('dinoBest', Math.floor(dinoScore)); } catch (e) {}
     }
-    showScoreForm(Math.floor(dinoScore));
   }
 }
 
@@ -293,8 +291,6 @@ function openDino() {
   dinoLastTime = 0;
   dinoModal.classList.add('open');
   document.body.style.overflow = 'hidden';
-  scoreForm.hidden = true;
-  loadScoreboard();
   requestAnimationFrame(dinoLoop);
 }
 
@@ -311,88 +307,9 @@ dinoCanvas.addEventListener('pointerdown', e => { e.preventDefault(); dinoJump()
 document.addEventListener('keydown', e => {
   if (!dinoModal.classList.contains('open')) return;
   if (e.key === 'Escape') closeDino();
-  if (e.target.tagName === 'INPUT') return;
   if (e.code === 'Space' || e.key === 'ArrowUp') {
     e.preventDefault();
     dinoJump();
-  }
-});
-
-// Scoreboard : les 3 meilleurs scores (API PHP + fichier JSON, voir api/scores.php)
-const SCORES_API = 'api/scores.php';
-const scoreForm     = document.getElementById('scoreForm');
-const scorePseudo   = document.getElementById('scorePseudo');
-const scoreValue    = document.getElementById('scoreValue');
-const scoreMessage  = document.getElementById('scoreMessage');
-const scoreboard    = document.getElementById('scoreboard');
-const scoreboardList = document.getElementById('scoreboardList');
-let scoreboardOnline = false;
-let pendingScore = 0;
-let topScores = [];
-
-function renderScoreboard(scores) {
-  topScores = scores;
-  scoreboardList.innerHTML = '';
-  if (!scores.length) {
-    scoreboardList.innerHTML = '<li class="scoreboard-empty">Aucun score pour l\'instant, sois le premier !</li>';
-    return;
-  }
-  scores.forEach(({ pseudo, score }) => {
-    const li = document.createElement('li');
-    const name = document.createElement('span');
-    const points = document.createElement('strong');
-    name.textContent = pseudo;
-    points.textContent = score;
-    li.append(name, points);
-    scoreboardList.append(li);
-  });
-}
-
-async function scoresRequest(options) {
-  const res = await fetch(SCORES_API, options);
-  const data = await res.json();
-  if (!res.ok) throw new Error(data.error || 'Erreur du serveur');
-  return data;
-}
-
-// Sans serveur PHP (site ouvert en local, GitHub Pages…), le classement est simplement masqué
-async function loadScoreboard() {
-  try {
-    renderScoreboard(await scoresRequest());
-    scoreboardOnline = true;
-    scoreboard.hidden = false;
-  } catch (e) {
-    scoreboardOnline = false;
-    scoreboard.hidden = true;
-  }
-}
-
-function showScoreForm(score) {
-  // Le formulaire n'apparaît que si le score entre dans le top 3
-  const qualifies = topScores.length < 3 || score > topScores[topScores.length - 1].score;
-  if (!scoreboardOnline || score < 1 || !qualifies) return;
-  pendingScore = score;
-  scoreValue.textContent = score;
-  try { scorePseudo.value = localStorage.getItem('dinoPseudo') || ''; } catch (e) {}
-  scoreMessage.hidden = true;
-  scoreForm.hidden = false;
-}
-
-scoreForm.addEventListener('submit', async e => {
-  e.preventDefault();
-  const pseudo = scorePseudo.value.trim();
-  if (!pseudo) return;
-  try { localStorage.setItem('dinoPseudo', pseudo); } catch (e) {}
-  try {
-    renderScoreboard(await scoresRequest({
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ pseudo, score: pendingScore })
-    }));
-    scoreForm.hidden = true;
-  } catch (err) {
-    scoreMessage.textContent = err.message;
-    scoreMessage.hidden = false;
   }
 });
 

@@ -9,7 +9,7 @@
     // Applique le thème enregistré avant l'affichage pour éviter un flash
     try { const t = localStorage.getItem('theme'); if (t) document.documentElement.dataset.theme = t; } catch (e) {}
   </script>
-  <link rel="stylesheet" href="styles.css?v=9">
+  <link rel="stylesheet" href="styles.css?v=10">
   <script src="https://unpkg.com/lucide@0.469.0/dist/umd/lucide.min.js"></script>
 </head>
 
@@ -308,18 +308,6 @@
         <h2 class="dino-title">Cours, petit Claude !</h2>
         <p class="dino-help">Espace, flèche du haut, clic ou toucher pour sauter.</p>
         <canvas id="dinoCanvas" class="dino-canvas" width="640" height="200"></canvas>
-        <form class="score-form" id="scoreForm" hidden>
-          <label for="scorePseudo">Tu entres dans le top 3 avec <strong id="scoreValue">0</strong> ! Ton pseudo :</label>
-          <div class="score-form-row">
-            <input type="text" id="scorePseudo" maxlength="16" placeholder="Ton pseudo" required autocomplete="nickname">
-            <button type="submit" class="btn btn-primary">Enregistrer</button>
-          </div>
-          <p class="score-message" id="scoreMessage" hidden></p>
-        </form>
-        <div class="scoreboard" id="scoreboard">
-          <h3><i data-lucide="trophy"></i> Top 3</h3>
-          <ol id="scoreboardList"><li class="scoreboard-empty">Chargement…</li></ol>
-        </div>
       </div>
     </div>
   </div>
@@ -388,7 +376,7 @@
     </div>
   </footer>
 
-  <script src="script.js?v=11"></script>
+  <script src="script.js?v=12"></script>
 </body>
 
 </html>
