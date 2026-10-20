@@ -26,6 +26,296 @@ themeToggle.addEventListener('click', () => {
 darkQuery.addEventListener('change', updateThemeIcon);
 updateThemeIcon();
 
+// ─── Mini-jeu : Memory des technos ───────────────────────
+const memoryGame   = document.getElementById('memoryGame');
+const memoryStart  = document.getElementById('memoryStart');
+const memoryPlay   = memoryGame.querySelector('.memory-play');
+const memoryGrid   = document.getElementById('memoryGrid');
+const memoryMoves  = document.getElementById('memoryMoves');
+const memoryBest   = document.getElementById('memoryBest');
+const memoryEnd    = document.getElementById('memoryEnd');
+const memoryResult = document.getElementById('memoryResult');
+
+const memoryTechs = ['react', 'rust', 'docker', 'typescript', 'nestjs', 'solidjs'];
+const devicon = tech => `https://cdn.jsdelivr.net/gh/devicons/devicon/icons/${tech}/${tech}-original.svg`;
+
+let memoryFirst = null;
+let memoryLock = false;
+let memoryCount = 0;
+let memoryFound = 0;
+
+function getMemoryBest() {
+  try { return Number(localStorage.getItem('memoryBest')) || null; } catch (e) { return null; }
+}
+
+function showMemoryBest() {
+  const best = getMemoryBest();
+  memoryBest.textContent = best ? `Record : ${best}` : '';
+}
+
+function startMemory() {
+  const cards = [...memoryTechs, ...memoryTechs].sort(() => Math.random() - 0.5);
+  memoryGrid.innerHTML = cards.map(tech => `
+    <button type="button" class="memory-card" data-tech="${tech}" aria-label="Carte cachée">
+      <span class="memory-card-inner">
+        <span class="memory-face memory-back">?</span>
+        <span class="memory-face memory-front"><img src="${devicon(tech)}" alt="${tech}"></span>
+      </span>
+    </button>`).join('');
+
+  memoryFirst = null;
+  memoryLock = false;
+  memoryCount = 0;
+  memoryFound = 0;
+  memoryMoves.textContent = '0 coups';
+  showMemoryBest();
+
+  memoryGame.classList.add('playing');
+  memoryStart.hidden = true;
+  memoryPlay.hidden = false;
+  memoryEnd.hidden = true;
+}
+
+function quitMemory() {
+  memoryGame.classList.remove('playing');
+  memoryPlay.hidden = true;
+  memoryStart.hidden = false;
+}
+
+function winMemory() {
+  const best = getMemoryBest();
+  const isRecord = !best || memoryCount < best;
+  if (isRecord) {
+    try { localStorage.setItem('memoryBest', memoryCount); } catch (e) {}
+  }
+  memoryResult.textContent = isRecord
+    ? `Nouveau record : ${memoryCount} coups !`
+    : `${memoryCount} coups · Record : ${best}`;
+  showMemoryBest();
+  memoryEnd.hidden = false;
+}
+
+memoryGrid.addEventListener('click', e => {
+  const card = e.target.closest('.memory-card');
+  if (!card || memoryLock || card === memoryFirst || card.classList.contains('matched')) return;
+
+  card.classList.add('flipped');
+  card.setAttribute('aria-label', card.dataset.tech);
+
+  if (!memoryFirst) {
+    memoryFirst = card;
+    return;
+  }
+
+  memoryCount++;
+  memoryMoves.textContent = `${memoryCount} coup${memoryCount > 1 ? 's' : ''}`;
+
+  if (memoryFirst.dataset.tech === card.dataset.tech) {
+    memoryFirst.classList.add('matched');
+    card.classList.add('matched');
+    memoryFirst = null;
+    if (++memoryFound === memoryTechs.length) setTimeout(winMemory, 400);
+    return;
+  }
+
+  const first = memoryFirst;
+  memoryFirst = null;
+  memoryLock = true;
+  setTimeout(() => {
+    [first, card].forEach(c => {
+      c.classList.remove('flipped');
+      c.setAttribute('aria-label', 'Carte cachée');
+    });
+    memoryLock = false;
+  }, 800);
+});
+
+memoryStart.addEventListener('click', startMemory);
+document.getElementById('memoryReplay').addEventListener('click', startMemory);
+document.getElementById('memoryQuit').addEventListener('click', quitMemory);
+
+// ─── Mini-jeu : Jeu du dino ──────────────────────────────
+const dinoModal  = document.getElementById('dinoModal');
+const dinoCanvas = document.getElementById('dinoCanvas');
+const dinoCtx    = dinoCanvas.getContext('2d');
+
+const DINO_W = dinoCanvas.width;
+const DINO_H = dinoCanvas.height;
+const GROUND = DINO_H - 30;
+const PIXEL  = 4;
+
+// Dino en pixel art (# = pixel plein), deux images pour l'animation des pattes
+const DINO_BODY = [
+  '     ######',
+  '     # ####',
+  '     ######',
+  '     ####  ',
+  '#   ###### ',
+  '## ######  ',
+  '########   ',
+  ' #######   ',
+  '  #####    '
+];
+const DINO_LEGS = [['  #   #    ', '  #        '], ['  #   #    ', '      #    ']];
+const DINO_SIZE = { w: 11 * PIXEL, h: (DINO_BODY.length + 2) * PIXEL };
+
+let dino, obstacles, dinoSpeed, dinoScore, dinoState, dinoFrame, dinoLastTime, groundOffset, nextObstacle;
+
+function dinoColors() {
+  const css = getComputedStyle(document.documentElement);
+  return {
+    text:   css.getPropertyValue('--text').trim(),
+    muted:  css.getPropertyValue('--muted').trim(),
+    accent: css.getPropertyValue('--accent').trim(),
+    sea:    css.getPropertyValue('--sea').trim()
+  };
+}
+
+function getDinoBest() {
+  try { return Number(localStorage.getItem('dinoBest')) || 0; } catch (e) { return 0; }
+}
+
+function resetDino() {
+  dino = { y: GROUND - DINO_SIZE.h, vy: 0 };
+  obstacles = [];
+  dinoSpeed = 6;
+  dinoScore = 0;
+  groundOffset = 0;
+  nextObstacle = 60;
+}
+
+function dinoJump() {
+  if (dinoState !== 'running') {
+    resetDino();
+    dinoState = 'running';
+  }
+  if (dino.y >= GROUND - DINO_SIZE.h) dino.vy = -11;
+}
+
+function drawPixels(rows, x, y, color) {
+  dinoCtx.fillStyle = color;
+  rows.forEach((row, r) => {
+    [...row].forEach((c, col) => {
+      if (c === '#') dinoCtx.fillRect(x + col * PIXEL, y + r * PIXEL, PIXEL, PIXEL);
+    });
+  });
+}
+
+function updateDino(step) {
+  dino.vy += 0.6 * step;
+  dino.y = Math.min(dino.y + dino.vy * step, GROUND - DINO_SIZE.h);
+  if (dino.y === GROUND - DINO_SIZE.h) dino.vy = 0;
+
+  dinoSpeed = Math.min(dinoSpeed + 0.002 * step, 14);
+  dinoScore += dinoSpeed * step * 0.02;
+  groundOffset = (groundOffset + dinoSpeed * step) % 24;
+
+  obstacles.forEach(o => { o.x -= dinoSpeed * step; });
+  obstacles = obstacles.filter(o => o.x + o.w > 0);
+
+  nextObstacle -= dinoSpeed * step;
+  if (nextObstacle <= 0) {
+    const h = 24 + Math.random() * 24;
+    const w = 12 + Math.floor(Math.random() * 3) * 10;
+    obstacles.push({ x: DINO_W, w, h });
+    nextObstacle = 260 + Math.random() * 260;
+  }
+
+  // Collision (avec une petite marge pour être indulgent)
+  const box = { x: 40 + 6, y: dino.y + 4, w: DINO_SIZE.w - 12, h: DINO_SIZE.h - 6 };
+  const hit = obstacles.some(o =>
+    box.x < o.x + o.w && box.x + box.w > o.x && box.y + box.h > GROUND - o.h
+  );
+  if (hit) {
+    dinoState = 'over';
+    if (Math.floor(dinoScore) > getDinoBest()) {
+      try { localStorage.setItem('dinoBest', Math.floor(dinoScore)); } catch (e) {}
+    }
+  }
+}
+
+function drawDino() {
+  const colors = dinoColors();
+  dinoCtx.clearRect(0, 0, DINO_W, DINO_H);
+
+  // Sol
+  dinoCtx.fillStyle = colors.muted;
+  dinoCtx.fillRect(0, GROUND, DINO_W, 2);
+  for (let x = -groundOffset; x < DINO_W; x += 24) dinoCtx.fillRect(x, GROUND + 8, 8, 2);
+
+  // Cactus
+  dinoCtx.fillStyle = colors.sea;
+  obstacles.forEach(o => {
+    dinoCtx.fillRect(o.x, GROUND - o.h, o.w, o.h);
+    dinoCtx.fillRect(o.x - 4, GROUND - o.h * 0.7, 4, o.h * 0.3);
+    dinoCtx.fillRect(o.x + o.w, GROUND - o.h * 0.8, 4, o.h * 0.3);
+  });
+
+  // Dino
+  const onGround = dino.y >= GROUND - DINO_SIZE.h;
+  const legs = onGround && dinoState === 'running' ? DINO_LEGS[Math.floor(dinoFrame / 6) % 2] : DINO_LEGS[0];
+  drawPixels([...DINO_BODY, ...legs], 40, dino.y, colors.accent);
+
+  // Score
+  dinoCtx.fillStyle = colors.text;
+  dinoCtx.font = '600 14px Inter, system-ui, sans-serif';
+  dinoCtx.textAlign = 'right';
+  const best = getDinoBest();
+  dinoCtx.fillText(`${best ? `Record ${best}   ` : ''}${String(Math.floor(dinoScore)).padStart(5, '0')}`, DINO_W - 12, 24);
+
+  dinoCtx.textAlign = 'center';
+  if (dinoState === 'ready') {
+    dinoCtx.fillText('Appuie sur Espace ou touche l\'écran pour commencer', DINO_W / 2, DINO_H / 2 - 10);
+  } else if (dinoState === 'over') {
+    dinoCtx.font = '700 20px Inter, system-ui, sans-serif';
+    dinoCtx.fillText('Game over', DINO_W / 2, DINO_H / 2 - 20);
+    dinoCtx.font = '500 13px Inter, system-ui, sans-serif';
+    dinoCtx.fillText('Saute pour rejouer', DINO_W / 2, DINO_H / 2 + 2);
+  }
+}
+
+function dinoLoop(time) {
+  if (!dinoModal.classList.contains('open')) return;
+  // step = 1 à 60 images/s, pour garder la même vitesse quel que soit l'écran
+  const step = Math.min((time - (dinoLastTime || time)) / (1000 / 60), 3);
+  dinoLastTime = time;
+  if (dinoState === 'running') {
+    dinoFrame++;
+    updateDino(step);
+  }
+  drawDino();
+  requestAnimationFrame(dinoLoop);
+}
+
+function openDino() {
+  resetDino();
+  dinoState = 'ready';
+  dinoFrame = 0;
+  dinoLastTime = 0;
+  dinoModal.classList.add('open');
+  document.body.style.overflow = 'hidden';
+  requestAnimationFrame(dinoLoop);
+}
+
+function closeDino() {
+  dinoModal.classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+document.getElementById('dinoOpen').addEventListener('click', openDino);
+document.getElementById('dinoClose').addEventListener('click', closeDino);
+document.getElementById('dinoOverlay').addEventListener('click', closeDino);
+dinoCanvas.addEventListener('pointerdown', e => { e.preventDefault(); dinoJump(); });
+
+document.addEventListener('keydown', e => {
+  if (!dinoModal.classList.contains('open')) return;
+  if (e.key === 'Escape') closeDino();
+  if (e.code === 'Space' || e.key === 'ArrowUp') {
+    e.preventDefault();
+    dinoJump();
+  }
+});
+
 // Navigation hamburger
 const hamburger = document.getElementById('hamburger');
 const navLinks  = document.getElementById('navLinks');
@@ -276,6 +566,7 @@ const projectsData = {
     subtitle: 'Gestion de licences logicielles',
     icon: 'key-round',
     category: 'web',
+    featured: true,
     summary: 'Catalogue de licences logicielles, affectation aux utilisateurs, statistiques et mail automatique à l\'approche de la fin de validité.',
     tags: ['NestJS', 'SolidJS', 'Prisma', 'Chart.js'],
     stack: ['TypeScript', 'NestJS', 'Prisma', 'PostgreSQL', 'LDAP (ldapts)', 'Nodemailer', 'SolidJS', 'Chart.js', 'Tailwind CSS', 'Vite', 'Docker', 'Nginx'],
@@ -433,13 +724,17 @@ function renderProjectLinks(project) {
   return `<div class="project-links">${links}${privateBadge}</div>`;
 }
 
+// Le projet phare (featured: true) passe en premier
 projectsGrid.innerHTML = Object.entries(projectsData)
+  .sort(([, a], [, b]) => Boolean(b.featured) - Boolean(a.featured))
   .map(([id, project]) => `
-    <div class="project-card" role="button" tabindex="0" data-project-id="${id}" data-category="${project.category}">
+    <div class="project-card${project.featured ? ' project-card--featured' : ''}" role="button" tabindex="0" data-project-id="${id}" data-category="${project.category}">
       <div class="project-icon"><i data-lucide="${project.icon}"></i></div>
       <div class="project-body">
+        ${project.featured ? '<span class="project-featured-badge"><i data-lucide="star"></i> Projet phare</span>' : ''}
         <h3>${project.title}</h3>
         <p>${project.summary}</p>
+        ${project.featured ? `<ul class="project-highlights">${project.description.map(d => `<li>${d}</li>`).join('')}</ul>` : ''}
         <div class="project-tags">
           ${project.tags.map(tag => `<span>${tag}</span>`).join('')}
         </div>
