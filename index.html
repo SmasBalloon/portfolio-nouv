@@ -9,7 +9,7 @@
     // Applique le thème enregistré avant l'affichage pour éviter un flash
     try { const t = localStorage.getItem('theme'); if (t) document.documentElement.dataset.theme = t; } catch (e) {}
   </script>
-  <link rel="stylesheet" href="styles.css?v=8">
+  <link rel="stylesheet" href="styles.css?v=9">
   <script src="https://unpkg.com/lucide@0.469.0/dist/umd/lucide.min.js"></script>
 </head>
 
@@ -81,32 +81,21 @@
     </a>
   </section>
 
-  <!-- ─── À propos ────────────────────────────────────── -->
-  <section id="about" class="section">
+  <!-- ─── Projets ─────────────────────────────────────── -->
+  <section id="projects" class="section">
     <div class="container">
-      <h2 class="section-heading">À propos de moi</h2>
-      <div class="about-grid">
-        <div class="about-text">
-          <p>
-            Développeur junior Full Stack passionné depuis plusieurs années, j'ai acquis une solide expérience dans
-            la création d'applications web modernes. Je maîtrise l'ensemble de la chaîne de développement,
-            du front-end au back-end, en passant par les bases de données et le déploiement.
-          </p>
-          <p>
-            Mon approche se concentre sur l'écriture de code propre, maintenable et performant.
-            J'aime résoudre des problèmes complexes et créer des expériences utilisateur exceptionnelles.
-          </p>
-          <p>
-            Pour la suite, je souhaite poursuivre mes études dans la cybersécurité et en faire mon métier.
-            Je suis actuellement à la recherche d'un stage pour mettre mes compétences en pratique et progresser dans ce domaine.
-          </p>""
-        </div>
-        <button type="button" class="about-visual" id="dinoOpen" aria-label="Jouer avec le petit Claude">
-          <i data-lucide="terminal"></i>
-        </button>
+      <h2 class="section-heading">Projets</h2>
+      <p class="projects-intro">Une sélection de mes dépôts GitHub. Cliquez sur une carte pour voir le détail du projet.</p>
+      <div class="project-filters" id="projectFilters" role="tablist">
+        <button class="project-filter active" data-filter="all">Tous</button>
+        <button class="project-filter" data-filter="web">Applications web</button>
+        <button class="project-filter" data-filter="tools">Outils & bots</button>
+        <button class="project-filter" data-filter="sae">SAÉ IUT</button>
       </div>
+      <div class="projects-grid" id="projectsGrid"></div>
     </div>
   </section>
+  
 
   <!-- ─── Compétences techniques ──────────────────────── -->
   <section id="skills" class="section section-alt">
@@ -213,157 +202,31 @@
     </div>
   </section>
 
-  <!-- ─── Projets ─────────────────────────────────────── -->
-  <section id="projects" class="section">
+  
+
+  <!-- ─── À propos ────────────────────────────────────── -->
+  <section id="about" class="section">
     <div class="container">
-      <h2 class="section-heading">Projets</h2>
-      <p class="projects-intro">Une sélection de mes dépôts GitHub. Cliquez sur une carte pour voir le détail du projet.</p>
-      <div class="project-filters" id="projectFilters" role="tablist">
-        <button class="project-filter active" data-filter="all">Tous</button>
-        <button class="project-filter" data-filter="web">Applications web</button>
-        <button class="project-filter" data-filter="tools">Outils & bots</button>
-        <button class="project-filter" data-filter="sae">SAÉ IUT</button>
-      </div>
-      <div class="projects-grid" id="projectsGrid"></div>
-    </div>
-  </section>
-
-
-  <!-- ─── BUT Compétences ─────────────────────────────── -->
-  <section id="but" class="section section-alt">
-    <div class="container">
-      <h2 class="section-heading">Compétences BUT Informatique</h2>
-      <p class="section-sub">Bachelor Universitaire de Technologie — Référentiel National</p>
-      <div class="but-grid">
-
-        <div class="but-card">
-          <div class="but-card-header" style="--card-color: #6366f1;">
-            <div class="but-icon"><i data-lucide="code-2"></i></div>
-            <div><h3>Réaliser</h3><p>Développer une application</p></div>
-          </div>
-          <div class="but-level">
-            <div class="level-track"><div class="level-fill" style="width: 100%;"></div></div>
-            <span>Niveau 4/4</span>
-          </div>
-          <button class="ac-toggle"><i data-lucide="chevron-down"></i> Apprentissages Critiques</button>
-          <div class="ac-list">
-            <div class="ac-item"><span class="ac-code">AC11.01</span><span>Implémenter des conceptions simples</span><span class="ac-lvl">3/4</span></div>
-            <div class="ac-item"><span class="ac-code">AC11.02</span><span>Élaborer des conceptions simples</span><span class="ac-lvl">3/4</span></div>
-            <div class="ac-item"><span class="ac-code">AC11.03</span><span>Faire des essais et évaluer leurs résultats</span><span class="ac-lvl">2/4</span></div>
-            <div class="ac-item"><span class="ac-code">AC11.04</span><span>Développer des interfaces utilisateurs</span><span class="ac-lvl">4/4</span></div>
-            <div class="ac-item"><span class="ac-code">AC21.01</span><span>Élaborer et implémenter les spécifications fonctionnelles</span><span class="ac-lvl">4/4</span></div>
-            <div class="ac-item"><span class="ac-code">AC21.02</span><span>Appliquer des principes d'accessibilité et d'ergonomie</span><span class="ac-lvl">2/4</span></div>
-            <div class="ac-item"><span class="ac-code">AC21.03</span><span>Adopter de bonnes pratiques de conception et de programmation</span><span class="ac-lvl">2/4</span></div>
-            <div class="ac-item"><span class="ac-code">AC21.04</span><span>Vérifier et valider la qualité de l'application par les tests</span><span class="ac-lvl">3/4</span></div>
-          </div>
+      <h2 class="section-heading">À propos de moi</h2>
+      <div class="about-grid">
+        <div class="about-text">
+          <p>
+            Développeur junior Full Stack passionné depuis plusieurs années, j'ai acquis une solide expérience dans
+            la création d'applications web modernes. Je maîtrise l'ensemble de la chaîne de développement,
+            du front-end au back-end, en passant par les bases de données et le déploiement.
+          </p>
+          <p>
+            Mon approche se concentre sur l'écriture de code propre, maintenable et performant.
+            J'aime résoudre des problèmes complexes et créer des expériences utilisateur exceptionnelles.
+          </p>
+          <p>
+            Pour la suite, je souhaite poursuivre mes études dans la cybersécurité et en faire mon métier.
+            Je suis actuellement à la recherche d'un stage pour mettre mes compétences en pratique et progresser dans ce domaine.
+          </p>""
         </div>
-
-        <div class="but-card">
-          <div class="but-card-header" style="--card-color: #ec4899;">
-            <div class="but-icon"><i data-lucide="zap"></i></div>
-            <div><h3>Optimiser</h3><p>Appréhender et construire des algorithmes</p></div>
-          </div>
-          <div class="but-level">
-            <div class="level-track"><div class="level-fill" style="width: 75%;"></div></div>
-            <span>Niveau 3/4</span>
-          </div>
-          <button class="ac-toggle"><i data-lucide="chevron-down"></i> Apprentissages Critiques</button>
-          <div class="ac-list">
-            <div class="ac-item"><span class="ac-code">AC12.01</span><span>Analyser un problème avec méthode</span><span class="ac-lvl">3/4</span></div>
-            <div class="ac-item"><span class="ac-code">AC12.02</span><span>Comparer des algorithmes pour des problèmes classiques</span><span class="ac-lvl">2/4</span></div>
-            <div class="ac-item"><span class="ac-code">AC12.03</span><span>Formaliser et mettre en œuvre des outils mathématiques</span><span class="ac-lvl">1/4</span></div>
-            <div class="ac-item"><span class="ac-code">AC22.01</span><span>Choisir des structures de données complexes</span><span class="ac-lvl">3/4</span></div>
-            <div class="ac-item"><span class="ac-code">AC22.02</span><span>Utiliser des techniques algorithmiques adaptées</span><span class="ac-lvl">2/4</span></div>
-            <div class="ac-item"><span class="ac-code">AC22.03</span><span>Comprendre les enjeux de sécurisation des données</span><span class="ac-lvl">3/4</span></div>
-            <div class="ac-item"><span class="ac-code">AC22.04</span><span>Évaluer l'impact environnemental et sociétal</span><span class="ac-lvl">2/4</span></div>
-          </div>
-        </div>
-
-        <div class="but-card">
-          <div class="but-card-header" style="--card-color: #0ea5e9;">
-            <div class="but-icon"><i data-lucide="server"></i></div>
-            <div><h3>Administrer</h3><p>Installer et configurer un poste de travail</p></div>
-          </div>
-          <div class="but-level">
-            <div class="level-track"><div class="level-fill" style="width: 75%;"></div></div>
-            <span>Niveau 3/4</span>
-          </div>
-          <button class="ac-toggle"><i data-lucide="chevron-down"></i> Apprentissages Critiques</button>
-          <div class="ac-list">
-            <div class="ac-item"><span class="ac-code">AC13.01</span><span>Identifier les composants d'un système numérique</span><span class="ac-lvl">3/4</span></div>
-            <div class="ac-item"><span class="ac-code">AC13.02</span><span>Utiliser les fonctionnalités d'un système multitâches</span><span class="ac-lvl">3/4</span></div>
-            <div class="ac-item"><span class="ac-code">AC13.03</span><span>Installer et configurer un système d'exploitation</span><span class="ac-lvl">4/4</span></div>
-            <div class="ac-item"><span class="ac-code">AC13.04</span><span>Configurer un poste dans un réseau d'entreprise</span><span class="ac-lvl">4/4</span></div>
-            <div class="ac-item"><span class="ac-code">AC23.01</span><span>Concevoir et développer des applications communicantes</span><span class="ac-lvl">2/4</span></div>
-            <div class="ac-item"><span class="ac-code">AC23.02</span><span>Utiliser des serveurs et services réseaux virtualisés</span><span class="ac-lvl">3/4</span></div>
-            <div class="ac-item"><span class="ac-code">AC23.03</span><span>Sécuriser les services et données d'un système</span><span class="ac-lvl">2/4</span></div>
-          </div>
-        </div>
-
-        <div class="but-card">
-          <div class="but-card-header" style="--card-color: #10b981;">
-            <div class="but-icon"><i data-lucide="database"></i></div>
-            <div><h3>Gérer</h3><p>Concevoir et mettre en place une base de données</p></div>
-          </div>
-          <div class="but-level">
-            <div class="level-track"><div class="level-fill" style="width: 75%;"></div></div>
-            <span>Niveau 3/4</span>
-          </div>
-          <button class="ac-toggle"><i data-lucide="chevron-down"></i> Apprentissages Critiques</button>
-          <div class="ac-list">
-            <div class="ac-item"><span class="ac-code">AC14.01</span><span>Mettre à jour et interroger une base de données relationnelle</span><span class="ac-lvl">3/4</span></div>
-            <div class="ac-item"><span class="ac-code">AC14.02</span><span>Visualiser des données</span><span class="ac-lvl">3/4</span></div>
-            <div class="ac-item"><span class="ac-code">AC14.03</span><span>Concevoir une BDD relationnelle à partir d'un cahier des charges</span><span class="ac-lvl">3/4</span></div>
-            <div class="ac-item"><span class="ac-code">AC24.01</span><span>Optimiser les modèles de données de l'entreprise</span><span class="ac-lvl">2/4</span></div>
-            <div class="ac-item"><span class="ac-code">AC24.02</span><span>Assurer la sécurité des données</span><span class="ac-lvl">3/4</span></div>
-            <div class="ac-item"><span class="ac-code">AC24.03</span><span>Organiser la restitution de données par la programmation</span><span class="ac-lvl">3/4</span></div>
-            <div class="ac-item"><span class="ac-code">AC24.04</span><span>Manipuler des données hétérogènes</span><span class="ac-lvl">3/4</span></div>
-          </div>
-        </div>
-
-        <div class="but-card">
-          <div class="but-card-header" style="--card-color: #f59e0b;">
-            <div class="but-icon"><i data-lucide="git-branch"></i></div>
-            <div><h3>Conduire</h3><p>Satisfaire les besoins des utilisateurs</p></div>
-          </div>
-          <div class="but-level">
-            <div class="level-track"><div class="level-fill" style="width: 50%;"></div></div>
-            <span>Niveau 2/4</span>
-          </div>
-          <button class="ac-toggle"><i data-lucide="chevron-down"></i> Apprentissages Critiques</button>
-          <div class="ac-list">
-            <div class="ac-item"><span class="ac-code">AC15.01</span><span>Appréhender les besoins du client et de l'utilisateur</span><span class="ac-lvl">3/4</span></div>
-            <div class="ac-item"><span class="ac-code">AC15.02</span><span>Mettre en place les outils de gestion de projet</span><span class="ac-lvl">2/4</span></div>
-            <div class="ac-item"><span class="ac-code">AC15.03</span><span>Identifier les acteurs et phases d'un cycle de développement</span><span class="ac-lvl">2/4</span></div>
-            <div class="ac-item"><span class="ac-code">AC25.01</span><span>Identifier les processus présents dans une organisation</span><span class="ac-lvl">2/4</span></div>
-            <div class="ac-item"><span class="ac-code">AC25.02</span><span>Formaliser les besoins du client et de l'utilisateur</span><span class="ac-lvl">2/4</span></div>
-            <div class="ac-item"><span class="ac-code">AC25.03</span><span>Identifier les critères de faisabilité d'un projet</span><span class="ac-lvl">2/4</span></div>
-            <div class="ac-item"><span class="ac-code">AC25.04</span><span>Définir et mettre en œuvre une démarche de suivi de projet</span><span class="ac-lvl">2/4</span></div>
-          </div>
-        </div>
-
-        <div class="but-card">
-          <div class="but-card-header" style="--card-color: #a855f7;">
-            <div class="but-icon"><i data-lucide="users"></i></div>
-            <div><h3>Collaborer</h3><p>Travailler efficacement en équipe</p></div>
-          </div>
-          <div class="but-level">
-            <div class="level-track"><div class="level-fill" style="width: 75%;"></div></div>
-            <span>Niveau 3/4</span>
-          </div>
-          <button class="ac-toggle"><i data-lucide="chevron-down"></i> Apprentissages Critiques</button>
-          <div class="ac-list">
-            <div class="ac-item"><span class="ac-code">AC16.01</span><span>Appréhender l'écosystème numérique</span><span class="ac-lvl">3/4</span></div>
-            <div class="ac-item"><span class="ac-code">AC16.02</span><span>Découvrir les aptitudes requises selon les secteurs informatiques</span><span class="ac-lvl">3/4</span></div>
-            <div class="ac-item"><span class="ac-code">AC16.03</span><span>Identifier les statuts et rôles d'une équipe pluridisciplinaire</span><span class="ac-lvl">3/4</span></div>
-            <div class="ac-item"><span class="ac-code">AC16.04</span><span>Acquérir les compétences interpersonnelles pour le travail en équipe</span><span class="ac-lvl">2/4</span></div>
-            <div class="ac-item"><span class="ac-code">AC26.01</span><span>Comprendre la diversité de l'informatique dans une organisation</span><span class="ac-lvl">2/4</span></div>
-            <div class="ac-item"><span class="ac-code">AC26.02</span><span>Appliquer une démarche pour intégrer une équipe informatique</span><span class="ac-lvl">3/4</span></div>
-            <div class="ac-item"><span class="ac-code">AC26.03</span><span>Mobiliser les compétences interpersonnelles en équipe informatique</span><span class="ac-lvl">3/4</span></div>
-            <div class="ac-item"><span class="ac-code">AC26.04</span><span>Rendre compte de son activité professionnelle</span><span class="ac-lvl">3/4</span></div>
-          </div>
-        </div>
-
+        <button type="button" class="about-visual" id="dinoOpen" aria-label="Jouer avec le petit Claude">
+          <i data-lucide="terminal"></i>
+        </button>
       </div>
     </div>
   </section>
@@ -445,6 +308,18 @@
         <h2 class="dino-title">Cours, petit Claude !</h2>
         <p class="dino-help">Espace, flèche du haut, clic ou toucher pour sauter.</p>
         <canvas id="dinoCanvas" class="dino-canvas" width="640" height="200"></canvas>
+        <form class="score-form" id="scoreForm" hidden>
+          <label for="scorePseudo">Tu entres dans le top 3 avec <strong id="scoreValue">0</strong> ! Ton pseudo :</label>
+          <div class="score-form-row">
+            <input type="text" id="scorePseudo" maxlength="16" placeholder="Ton pseudo" required autocomplete="nickname">
+            <button type="submit" class="btn btn-primary">Enregistrer</button>
+          </div>
+          <p class="score-message" id="scoreMessage" hidden></p>
+        </form>
+        <div class="scoreboard" id="scoreboard">
+          <h3><i data-lucide="trophy"></i> Top 3</h3>
+          <ol id="scoreboardList"><li class="scoreboard-empty">Chargement…</li></ol>
+        </div>
       </div>
     </div>
   </div>
@@ -513,7 +388,7 @@
     </div>
   </footer>
 
-  <script src="script.js?v=9"></script>
+  <script src="script.js?v=11"></script>
 </body>
 
 </html>
