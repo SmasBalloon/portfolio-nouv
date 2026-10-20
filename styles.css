@@ -402,6 +402,49 @@ img { display: inline-block; }
   color: var(--text);
 }
 
+.skill-list li[role="button"] {
+  cursor: pointer;
+  padding: 0.2rem 0.5rem;
+  margin-left: -0.5rem;
+  border-radius: 8px;
+  transition: background 0.2s, color 0.2s;
+}
+
+.skill-list li[role="button"]:hover { background: var(--surface); color: var(--accent); }
+.skill-list li.active { background: var(--surface); color: var(--accent); }
+
+.tech-filter-banner {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.85rem;
+  padding: 0.4rem 0.5rem 0.4rem 0.9rem;
+  margin: -0.75rem 0 1.5rem;
+  border: 1px solid var(--accent);
+  border-radius: 999px;
+  color: var(--text);
+}
+
+.tech-filter-banner[hidden], .tech-filter-empty[hidden] { display: none; }
+
+.tech-filter-banner button {
+  display: grid;
+  place-items: center;
+  width: 22px; height: 22px;
+  border: none;
+  border-radius: 50%;
+  background: var(--accent);
+  color: #fff;
+  cursor: pointer;
+}
+
+.tech-filter-banner button svg { width: 14px; height: 14px; }
+
+.tech-filter-empty {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
 .skill-list img {
   width: 18px; height: 18px;
   object-fit: contain;

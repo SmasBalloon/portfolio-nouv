@@ -436,10 +436,69 @@ const projectFilters = document.getElementById('projectFilters');
 projectFilters.addEventListener('click', e => {
   const btn = e.target.closest('.project-filter');
   if (!btn) return;
+  clearTechFilter();
   projectFilters.querySelectorAll('.project-filter').forEach(b => b.classList.toggle('active', b === btn));
   const filter = btn.dataset.filter;
   projectsGrid.querySelectorAll('.project-card').forEach(card => {
     card.hidden = filter !== 'all' && card.dataset.category !== filter;
+  });
+});
+
+// Filtre par technologie (clic sur une compétence)
+const techBanner = document.createElement('div');
+techBanner.className = 'tech-filter-banner';
+techBanner.hidden = true;
+projectFilters.after(techBanner);
+
+const techEmpty = document.createElement('p');
+techEmpty.className = 'tech-filter-empty';
+techEmpty.textContent = 'Aucun projet de la sélection n\'utilise encore cette technologie.';
+techEmpty.hidden = true;
+projectsGrid.after(techEmpty);
+
+// Libellé de la compétence -> nom utilisé dans les stacks des projets
+const techAliases = { 'Express.js': 'Express', 'Vue 3': 'Vue 3', 'Tailwind CSS': 'Tailwind CSS' };
+
+function clearTechFilter() {
+  techBanner.hidden = true;
+  techEmpty.hidden = true;
+  document.querySelectorAll('.skill-list li.active').forEach(li => li.classList.remove('active'));
+}
+
+function filterByTech(li) {
+  const label = li.textContent.trim();
+  const tech = (techAliases[label] || label).toLowerCase();
+
+  document.querySelectorAll('.skill-list li').forEach(item => item.classList.toggle('active', item === li));
+  projectFilters.querySelectorAll('.project-filter').forEach(b => b.classList.toggle('active', b.dataset.filter === 'all'));
+
+  let count = 0;
+  projectsGrid.querySelectorAll('.project-card').forEach(card => {
+    const { tags, stack } = projectsData[card.dataset.projectId];
+    const match = [...tags, ...stack].some(t => t.toLowerCase() === tech);
+    card.hidden = !match;
+    if (match) count++;
+  });
+
+  techBanner.innerHTML = `<span>Projets utilisant <strong>${label}</strong> (${count})</span>
+    <button type="button" aria-label="Retirer le filtre"><i data-lucide="x"></i></button>`;
+  techBanner.hidden = false;
+  techEmpty.hidden = count > 0;
+  techBanner.querySelector('button').addEventListener('click', () => {
+    clearTechFilter();
+    projectsGrid.querySelectorAll('.project-card').forEach(card => { card.hidden = false; });
+  });
+  lucide.createIcons();
+
+  document.getElementById('projects').scrollIntoView({ behavior: 'smooth' });
+}
+
+document.querySelectorAll('.skill-list li').forEach(li => {
+  li.tabIndex = 0;
+  li.setAttribute('role', 'button');
+  li.addEventListener('click', () => filterByTech(li));
+  li.addEventListener('keydown', e => {
+    if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); filterByTech(li); }
   });
 });
 

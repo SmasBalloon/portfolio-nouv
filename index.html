@@ -4,8 +4,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mathis Sauvage — Développeur Full Stack</title>
-  <link rel="stylesheet" href="styles.css?v=2">
+  <title>Mathis Sauvage — Développeur Junior Full Stack</title>
+  <link rel="stylesheet" href="styles.css?v=3">
   <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 
@@ -36,10 +36,10 @@
       <div class="hero-text">
         <p class="hero-eyebrow">Salut, je suis</p>
         <h1 class="hero-name">Mathis <span>Sauvage</span></h1>
-        <h2 class="hero-role">Développeur Full Stack</h2>
+        <h2 class="hero-role">Développeur Junior Full Stack</h2>
         <p class="hero-desc">
-          Je crée des applications web modernes et performantes avec passion et expertise.
-          Spécialisé en TypeScript, NestJS, SolidJS, React et Laravel, avec un goût pour Rust.
+          Je crée des applications web modernes avec passion. Spécialisé en TypeScript, NestJS, SolidJS, React et Laravel.
+          Actuellement à la recherche d'un stage dans ce même dommaine.
         </p>
         <div class="hero-actions">
           <a href="#projects" class="btn btn-primary">Voir mes projets</a>
@@ -62,7 +62,7 @@
       <div class="about-grid">
         <div class="about-text">
           <p>
-            Développeur Full Stack passionné depuis plusieurs années, j'ai acquis une solide expérience dans
+            Développeur junior Full Stack passionné depuis plusieurs années, j'ai acquis une solide expérience dans
             la création d'applications web modernes. Je maîtrise l'ensemble de la chaîne de développement,
             du front-end au back-end, en passant par les bases de données et le déploiement.
           </p>
@@ -70,20 +70,10 @@
             Mon approche se concentre sur l'écriture de code propre, maintenable et performant.
             J'aime résoudre des problèmes complexes et créer des expériences utilisateur exceptionnelles.
           </p>
-          <div class="stats-row">
-            <div class="stat-box">
-              <strong>10+</strong>
-              <span>Projets complétés</span>
-            </div>
-            <div class="stat-box">
-              <strong>1+</strong>
-              <span>Années d'expérience</span>
-            </div>
-            <div class="stat-box">
-              <strong>100%</strong>
-              <span>Satisfaction client</span>
-            </div>
-          </div>
+          <p>
+            Pour la suite, je souhaite poursuivre mes études dans la cybersécurité et en faire mon métier.
+            Je suis actuellement à la recherche d'un stage pour mettre mes compétences en pratique et progresser dans ce domaine.
+          </p>""
         </div>
         <div class="about-visual">
           <i data-lucide="terminal"></i>
@@ -106,7 +96,6 @@
             <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JS"> JavaScript</li>
             <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" alt="TS"> TypeScript</li>
             <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React"> React</li>
-            <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg" alt="Next.js" class="invert-icon"> Next.js</li>
             <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/solidjs/solidjs-original.svg" alt="SolidJS"> SolidJS</li>
             <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg" alt="Vue"> Vue 3</li>
             <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg" alt="Tailwind"> Tailwind CSS</li>
@@ -185,11 +174,11 @@
           <div class="tl-card">
             <span class="tl-date">2026+</span>
             <h3>Objectifs futurs</h3>
-            <h4>Développeur Full-Stack confirmé</h4>
-            <p>Spécialisation avancée et projets ambitieux</p>
+            <h4>Spécialisation en cybersécurité</h4>
+            <p>Poursuite d'études et carrière dans la cybersécurité</p>
             <p class="tl-detail">
-              Poursuite d'études ou entrée dans la vie professionnelle en tant que développeur
-              full-stack avec expertise en technologies modernes.
+              Poursuivre mes études en cybersécurité afin d'en faire mon métier. Je suis actuellement
+              à la recherche d'un stage pour acquérir de l'expérience dans ce domaine.
             </p>
           </div>
         </div>
@@ -197,6 +186,22 @@
       </div>
     </div>
   </section>
+
+  <!-- ─── Projets ─────────────────────────────────────── -->
+  <section id="projects" class="section">
+    <div class="container">
+      <h2 class="section-heading">Projets</h2>
+      <p class="projects-intro">Une sélection de mes dépôts GitHub. Cliquez sur une carte pour voir le détail du projet.</p>
+      <div class="project-filters" id="projectFilters" role="tablist">
+        <button class="project-filter active" data-filter="all">Tous</button>
+        <button class="project-filter" data-filter="web">Applications web</button>
+        <button class="project-filter" data-filter="tools">Outils & bots</button>
+        <button class="project-filter" data-filter="sae">SAÉ IUT</button>
+      </div>
+      <div class="projects-grid" id="projectsGrid"></div>
+    </div>
+  </section>
+
 
   <!-- ─── BUT Compétences ─────────────────────────────── -->
   <section id="but" class="section section-alt">
@@ -337,20 +342,6 @@
     </div>
   </section>
 
-  <!-- ─── Projets ─────────────────────────────────────── -->
-  <section id="projects" class="section">
-    <div class="container">
-      <h2 class="section-heading">Projets</h2>
-      <p class="projects-intro">Une sélection de mes dépôts GitHub. Cliquez sur une carte pour voir le détail du projet.</p>
-      <div class="project-filters" id="projectFilters" role="tablist">
-        <button class="project-filter active" data-filter="all">Tous</button>
-        <button class="project-filter" data-filter="web">Applications web</button>
-        <button class="project-filter" data-filter="tools">Outils & bots</button>
-        <button class="project-filter" data-filter="sae">SAÉ IUT</button>
-      </div>
-      <div class="projects-grid" id="projectsGrid"></div>
-    </div>
-  </section>
 
   <!-- ─── Contact ─────────────────────────────────────── -->
   <section id="contact" class="section section-alt">
@@ -481,7 +472,7 @@
     </div>
   </footer>
 
-  <script src="script.js?v=2"></script>
+  <script src="script.js?v=3"></script>
 </body>
 
 </html>
