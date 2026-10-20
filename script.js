@@ -144,20 +144,17 @@ const DINO_H = dinoCanvas.height;
 const GROUND = DINO_H - 30;
 const PIXEL  = 4;
 
-// Dino en pixel art (# = pixel plein), deux images pour l'animation des pattes
+// Petit Claude Code en pixel art (# = pixel plein), deux images pour l'animation des pattes
 const DINO_BODY = [
-  '     ######',
-  '     # ####',
-  '     ######',
-  '     ####  ',
-  '#   ###### ',
-  '## ######  ',
-  '########   ',
-  ' #######   ',
-  '  #####    '
+  '  #######  ',
+  '  # ### #  ',
+  '  # ### #  ',
+  '###########',
+  '  #######  '
 ];
-const DINO_LEGS = [['  #   #    ', '  #        '], ['  #   #    ', '      #    ']];
-const DINO_SIZE = { w: 11 * PIXEL, h: (DINO_BODY.length + 2) * PIXEL };
+const DINO_LEGS = [['  # # # #  '], ['   # # # # ']];
+const CLAUDE_ORANGE = '#d97757';
+const DINO_SIZE = { w: 11 * PIXEL, h: (DINO_BODY.length + DINO_LEGS[0].length) * PIXEL };
 
 let dino, obstacles, dinoSpeed, dinoScore, dinoState, dinoFrame, dinoLastTime, groundOffset, nextObstacle;
 
@@ -251,10 +248,10 @@ function drawDino() {
     dinoCtx.fillRect(o.x + o.w, GROUND - o.h * 0.8, 4, o.h * 0.3);
   });
 
-  // Dino
+  // Petit Claude
   const onGround = dino.y >= GROUND - DINO_SIZE.h;
   const legs = onGround && dinoState === 'running' ? DINO_LEGS[Math.floor(dinoFrame / 6) % 2] : DINO_LEGS[0];
-  drawPixels([...DINO_BODY, ...legs], 40, dino.y, colors.accent);
+  drawPixels([...DINO_BODY, ...legs], 40, dino.y, CLAUDE_ORANGE);
 
   // Score
   dinoCtx.fillStyle = colors.text;
