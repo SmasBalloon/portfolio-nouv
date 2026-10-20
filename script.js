@@ -1,6 +1,31 @@
 // Init Lucide icons
 lucide.createIcons();
 
+// Thème clair / sombre
+const themeToggle = document.getElementById('themeToggle');
+const darkQuery = window.matchMedia('(prefers-color-scheme: dark)');
+
+function currentTheme() {
+  return document.documentElement.dataset.theme || (darkQuery.matches ? 'dark' : 'light');
+}
+
+function updateThemeIcon() {
+  const isDark = currentTheme() === 'dark';
+  themeToggle.innerHTML = `<i data-lucide="${isDark ? 'sun' : 'moon'}"></i>`;
+  themeToggle.setAttribute('aria-label', isDark ? 'Passer en thème clair' : 'Passer en thème sombre');
+  lucide.createIcons();
+}
+
+themeToggle.addEventListener('click', () => {
+  const next = currentTheme() === 'dark' ? 'light' : 'dark';
+  document.documentElement.dataset.theme = next;
+  try { localStorage.setItem('theme', next); } catch (e) {}
+  updateThemeIcon();
+});
+
+darkQuery.addEventListener('change', updateThemeIcon);
+updateThemeIcon();
+
 // Navigation hamburger
 const hamburger = document.getElementById('hamburger');
 const navLinks  = document.getElementById('navLinks');

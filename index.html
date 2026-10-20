@@ -5,8 +5,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Mathis Sauvage — Développeur Junior Full Stack</title>
-  <link rel="stylesheet" href="styles.css?v=4">
-  <script src="https://unpkg.com/lucide@latest"></script>
+  <script>
+    // Applique le thème enregistré avant l'affichage pour éviter un flash
+    try { const t = localStorage.getItem('theme'); if (t) document.documentElement.dataset.theme = t; } catch (e) {}
+  </script>
+  <link rel="stylesheet" href="styles.css?v=5">
+  <script src="https://unpkg.com/lucide@0.469.0/dist/umd/lucide.min.js"></script>
 </head>
 
 <body>
@@ -24,9 +28,14 @@
         <a href="#projects">Projets</a>
         <a href="#contact">Contact</a>
       </nav>
-      <button class="nav-hamburger" id="hamburger" aria-label="Menu">
-        <i data-lucide="menu"></i>
-      </button>
+      <div class="nav-actions">
+        <button class="theme-toggle" id="themeToggle" aria-label="Changer de thème">
+          <i data-lucide="moon"></i>
+        </button>
+        <button class="nav-hamburger" id="hamburger" aria-label="Menu">
+          <i data-lucide="menu"></i>
+        </button>
+      </div>
     </div>
   </header>
 
@@ -366,7 +375,7 @@
             </li>
             <li>
               <i data-lucide="map-pin"></i>
-              <span>Périgueux, France</span>
+              <span>Limoges, France</span>
             </li>
           </ul>
           <div class="socials">
@@ -467,12 +476,12 @@
   <!-- ─── Footer ──────────────────────────────────────── -->
   <footer class="footer">
     <div class="container">
-      <p>© 2025 Mathis Sauvage — Tous droits réservés</p>
+      <p>© 2026 Mathis Sauvage — Tous droits réservés</p>
       <p>Made with <i data-lucide="heart" style="display:inline;width:14px;height:14px;color:#f43f5e;vertical-align:middle;"></i></p>
     </div>
   </footer>
 
-  <script src="script.js?v=3"></script>
+  <script src="script.js?v=4"></script>
 </body>
 
 </html>
